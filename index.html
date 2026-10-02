@@ -626,10 +626,10 @@
         <span>★ HOUSTON'S TRUSTED FLEET PARTNER</span>
       </div>
       <h1>Drive Your Next <br><span class="highlight">Adventure.</span></h1>
-      <p>Reliable family SUVs, 3-row vehicles, and compact crossovers. Serving Houston individuals, corporate accounts, and insurance replacement rentals with speed and dependability.</p>
+      <p>Everyday fuel-efficient sedans and compact crossovers. Serving Houston individuals, corporate accounts, and insurance replacement rentals with speed and dependability.</p>
       
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="#fleet">Browse SUVs</a>
+        <a class="btn btn-primary" href="#fleet">Browse Fleet (8)</a>
         <a class="btn btn-ghost-white" href="tel:+18328441156">Call (832) 844-1156</a>
       </div>
 
@@ -650,7 +650,7 @@
     </div>
 
     <div class="hero-car-showcase">
-      <img class="hero-car-img" src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80" alt="UAL Fleet SUV Houston">
+      <img class="hero-car-img" src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80" alt="Toyota Camry Rental Houston">
     </div>
   </div>
 </section>
@@ -672,11 +672,10 @@
 
       <div class="form-group">
         <label>Category</label>
-        <select class="form-control" id="searchCategory" onchange="filterSubcategory(this.value)">
-          <option value="all">All SUVs (8 Available)</option>
-          <option value="fullsize">Full-Size & 3-Row SUVs</option>
-          <option value="midsize">Midsize SUVs</option>
-          <option value="compact">Compact Crossovers</option>
+        <select class="form-control" id="searchCategory" onchange="filterCategory(this.value)">
+          <option value="all">All Fleet (8 Available)</option>
+          <option value="sedan">Everyday Sedans</option>
+          <option value="suv">Compact Crossovers & Small SUVs</option>
         </select>
       </div>
 
@@ -737,18 +736,17 @@
 
 <section class="fleet-section wrap" id="fleet">
   <div class="section-header">
-    <span class="section-tag">PREMIUM SELECTION</span>
-    <h2 class="section-title">Explore Our Houston SUV Fleet</h2>
-    <p class="section-desc">Practical family SUVs, full-size 3-row vehicles, and fuel-efficient crossovers.</p>
+    <span class="section-tag">PRACTICAL & RELIABLE</span>
+    <h2 class="section-title">Explore Our Everyday Houston Rental Fleet</h2>
+    <p class="section-desc">Reliable daily sedans and practical small crossovers perfect for Houston commuters, visitors, and insurance replacements.</p>
   </div>
 
-  <!-- Fleet Controls Bar (Sub-Categories & Sorting Options) -->
+  <!-- Fleet Controls Bar (Categories & Sorting Options) -->
   <div class="fleet-controls-bar">
     <div class="fleet-tabs">
-      <button class="tab-btn active" onclick="filterSubcategory('all', this)">All SUVs (8)</button>
-      <button class="tab-btn" onclick="filterSubcategory('fullsize', this)">Full-Size & 3-Row</button>
-      <button class="tab-btn" onclick="filterSubcategory('midsize', this)">Midsize</button>
-      <button class="tab-btn" onclick="filterSubcategory('compact', this)">Compact Crossovers</button>
+      <button class="tab-btn active" onclick="filterCategory('all', this)">All Fleet (8)</button>
+      <button class="tab-btn" onclick="filterCategory('sedan', this)">Everyday Sedans (4)</button>
+      <button class="tab-btn" onclick="filterCategory('suv', this)">Small SUVs & Crossovers (4)</button>
     </div>
 
     <div class="sort-group">
@@ -781,7 +779,7 @@
       <ul class="biz-list">
         <li>Direct insurance claim coordination and billing assistance</li>
         <li>Discounted long-term weekly and monthly corporate rates</li>
-        <li>Family SUVs for business crews, travel, and personal drivers</li>
+        <li>Fuel-efficient sedans and crossovers for everyday commuters</li>
         <li>Flexible extension options with hassle-free maintenance</li>
       </ul>
 
@@ -814,7 +812,7 @@
     <div class="reviews-grid">
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-quote">"Mazhar and the team at UAL Fleet saved my trip when my personal SUV broke down. Renting the Chevrolet Tahoe LT was seamless, incredibly clean, and priced way better than big airport brands."</p>
+        <p class="review-quote">"Mazhar and the team at UAL Fleet saved my trip when my personal car was getting repaired. Renting the Toyota Camry SE was seamless, super clean, and got amazing gas mileage."</p>
         <div class="reviewer">
           <div class="reviewer-avatar">DM</div>
           <div class="reviewer-info">
@@ -826,7 +824,7 @@
 
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-quote">"We needed two GMC Yukon SLTs for a corporate team visiting our Houston headquarters. The vehicles were spotless, drove like new, and pickup was super smooth."</p>
+        <p class="review-quote">"We needed two Honda RAV4s and CR-Vs for visiting consultants at our Houston office. Fast drop-off, clean cars, and zero hidden fees!"</p>
         <div class="reviewer">
           <div class="reviewer-avatar">SR</div>
           <div class="reviewer-info">
@@ -838,7 +836,7 @@
 
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-quote">"Best rental experience in Houston! Transparent pricing with no surprise fees. Highly recommend UAL Fleet LLC for any business or family trip."</p>
+        <p class="review-quote">"Best rental experience in Houston! Honest pricing and reliable sedans. Highly recommend UAL Fleet LLC for any everyday trip."</p>
         <div class="reviewer">
           <div class="reviewer-avatar">AH</div>
           <div class="reviewer-info">
@@ -914,14 +912,14 @@
           <div class="form-group">
             <label>Preferred Vehicle</label>
             <select class="form-control" id="formCarSelect">
-              <option value="Tahoe">Chevrolet Tahoe LT</option>
-              <option value="Yukon">GMC Yukon SLT</option>
+              <option value="Camry">Toyota Camry SE</option>
+              <option value="Civic">Honda Civic Sport</option>
+              <option value="Corolla">Toyota Corolla LE</option>
+              <option value="Elantra">Hyundai Elantra SEL</option>
               <option value="RAV4">Toyota RAV4 XLE</option>
-              <option value="Explorer">Ford Explorer XLT</option>
-              <option value="Grand Cherokee">Jeep Grand Cherokee Laredo</option>
-              <option value="Armada">Nissan Armada SV</option>
-              <option value="Equinox">Chevrolet Equinox LT</option>
               <option value="CRV">Honda CR-V EX</option>
+              <option value="Rogue">Nissan Rogue SV</option>
+              <option value="CX5">Mazda CX-5 Select</option>
               <option value="Other">Other (Specify in notes)</option>
             </select>
           </div>
@@ -961,16 +959,16 @@
       <div style="display:flex; gap:16px; align-items:center; margin-bottom:16px;">
         <img id="modalCarImg" src="" style="width:120px; height:80px; object-fit:cover; border-radius:8px;" alt="Selected Car">
         <div>
-          <div id="modalCarCategory" class="badge badge-orange">SUV</div>
+          <div id="modalCarCategory" class="badge badge-orange">Sedan</div>
           <h4 id="modalCarName" style="font-size:18px; color:var(--navy); font-weight:800; margin-top:4px;">Vehicle Name</h4>
-          <div style="font-size:13px; color:var(--muted);" id="modalCarRate">$120 / day</div>
+          <div style="font-size:13px; color:var(--muted);" id="modalCarRate">$68 / day</div>
         </div>
       </div>
 
       <div class="price-calc-box">
         <div>
           <div style="font-size:12px; color:var(--muted); font-weight:600;">ESTIMATED TOTAL</div>
-          <div style="font-size:24px; font-weight:800; color:var(--navy);" id="modalEstTotal">$120.00</div>
+          <div style="font-size:24px; font-weight:800; color:var(--navy);" id="modalEstTotal">$68.00</div>
         </div>
         <div style="font-size:12px; color:var(--orange); font-weight:700;">*Rates calculated on 1 day minimum</div>
       </div>
@@ -1007,7 +1005,7 @@
           <div class="brand-text">UAL <span>FLEET</span></div>
         </div>
         <p style="color:#9CA3AF; line-height:1.6; font-size:13.5px; margin-bottom:20px;">
-          UAL Fleet LLC is Houston's dependable auto rental service. Providing practical family SUVs and versatile crossovers for business, leisure, and insurance replacements.
+          UAL Fleet LLC is Houston's dependable auto rental service. Providing everyday sedans and small crossover SUVs for business, daily travel, and insurance replacements.
         </p>
         <p style="color:var(--white); font-weight:700;">CEO: Mazhar Zahoor</p>
       </div>
@@ -1015,9 +1013,8 @@
       <div>
         <h4>Fleet Categories</h4>
         <ul class="footer-links">
-          <li><a href="#fleet" onclick="filterSubcategory('fullsize')">Full-Size & 3-Row SUVs</a></li>
-          <li><a href="#fleet" onclick="filterSubcategory('midsize')">Midsize SUVs</a></li>
-          <li><a href="#fleet" onclick="filterSubcategory('compact')">Compact Crossovers</a></li>
+          <li><a href="#fleet" onclick="filterCategory('sedan')">Everyday Sedans</a></li>
+          <li><a href="#fleet" onclick="filterCategory('suv')">Small Crossovers & SUVs</a></li>
         </ul>
       </div>
 
@@ -1052,147 +1049,150 @@
 </footer>
 
 <script>
-  // Strictly Accurate Standard SUV Fleet Database
+  // Reset Fleet Database: 4 Everyday Sedans + 4 Small/Compact SUVs with Accurate Names & Specs
   const fleetData = [
+    // --- EVERYDAY SEDANS ---
     {
       id: 1,
-      name: "Chevrolet Tahoe LT",
-      subcategory: "fullsize",
-      tag: "3-Row Full-Size",
-      badgeClass: "badge-orange",
-      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80",
-      seats: "7-8 Seats",
+      name: "Toyota Camry SE",
+      category: "sedan",
+      tag: "Midsize Sedan",
+      badgeClass: "badge-navy",
+      image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=700&q=80",
+      seats: "5 Seats",
       trans: "Automatic",
-      drive: "5.3L V8",
-      luggage: "4-6 Bags",
-      priceDay: 120,
-      priceWeek: 750,
+      drive: "2.5L 4-Cyl / 32 MPG",
+      luggage: "3 Bags",
+      priceDay: 68,
+      priceWeek: 410,
       rating: 4.9,
       year: 2024,
-      dateAdded: "2024-08-15"
+      dateAdded: "2024-06-10"
     },
     {
       id: 2,
-      name: "GMC Yukon SLT",
-      subcategory: "fullsize",
-      tag: "3-Row Full-Size",
-      badgeClass: "badge-navy",
-      image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80",
-      seats: "8 Seats",
-      trans: "Automatic",
-      drive: "5.3L V8",
-      luggage: "6 Bags",
-      priceDay: 135,
-      priceWeek: 850,
+      name: "Honda Civic Sport",
+      category: "sedan",
+      tag: "Compact Sedan",
+      badgeClass: "badge-green",
+      image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=700&q=80",
+      seats: "5 Seats",
+      trans: "Automatic CVT",
+      drive: "2.0L 4-Cyl / 35 MPG",
+      luggage: "2 Bags",
+      priceDay: 62,
+      priceWeek: 370,
       rating: 4.8,
-      year: 2024,
-      dateAdded: "2024-07-20"
+      year: 2023,
+      dateAdded: "2023-10-15"
     },
     {
       id: 3,
-      name: "Toyota RAV4 XLE",
-      subcategory: "compact",
-      tag: "Compact Crossover",
+      name: "Toyota Corolla LE",
+      category: "sedan",
+      tag: "Economy Sedan",
       badgeClass: "badge-green",
-      image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80",
+      image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
-      trans: "Automatic",
-      drive: "2.5L 4-Cyl",
-      luggage: "3 Bags",
-      priceDay: 80,
-      priceWeek: 480,
+      trans: "Automatic CVT",
+      drive: "2.0L 4-Cyl / 38 MPG",
+      luggage: "2 Bags",
+      priceDay: 60,
+      priceWeek: 360,
       rating: 4.9,
-      year: 2023,
-      dateAdded: "2023-11-10"
+      year: 2024,
+      dateAdded: "2024-02-01"
     },
     {
       id: 4,
-      name: "Ford Explorer XLT",
-      subcategory: "fullsize",
-      tag: "3-Row SUV",
+      name: "Hyundai Elantra SEL",
+      category: "sedan",
+      tag: "Commuter Sedan",
       badgeClass: "badge-green",
-      image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=700&q=80",
-      seats: "7 Seats",
-      trans: "Automatic",
-      drive: "2.3L EcoBoost",
-      luggage: "3-4 Bags",
-      priceDay: 90,
-      priceWeek: 550,
-      rating: 4.7,
-      year: 2023,
-      dateAdded: "2023-09-05"
-    },
-    {
-      id: 5,
-      name: "Jeep Grand Cherokee Laredo",
-      subcategory: "midsize",
-      tag: "Midsize SUV",
-      badgeClass: "badge-navy",
-      image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=700&q=80",
+      image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
       trans: "Automatic",
-      drive: "3.6L V6 4x4",
-      luggage: "3 Bags",
-      priceDay: 95,
-      priceWeek: 590,
-      rating: 4.8,
-      year: 2022,
-      dateAdded: "2022-10-18"
+      drive: "2.0L 4-Cyl / 36 MPG",
+      luggage: "2-3 Bags",
+      priceDay: 58,
+      priceWeek: 350,
+      rating: 4.7,
+      year: 2023,
+      dateAdded: "2023-08-20"
+    },
+
+    // --- SMALL / COMPACT SUVS ---
+    {
+      id: 5,
+      name: "Toyota RAV4 XLE",
+      category: "suv",
+      tag: "Compact SUV",
+      badgeClass: "badge-orange",
+      image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80",
+      seats: "5 Seats",
+      trans: "Automatic",
+      drive: "2.5L 4-Cyl / 30 MPG",
+      luggage: "3-4 Bags",
+      priceDay: 80,
+      priceWeek: 480,
+      rating: 4.9,
+      year: 2024,
+      dateAdded: "2024-05-12"
     },
     {
       id: 6,
-      name: "Nissan Armada SV",
-      subcategory: "fullsize",
-      tag: "3-Row Full-Size",
+      name: "Honda CR-V EX",
+      category: "suv",
+      tag: "Compact SUV",
       badgeClass: "badge-navy",
-      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=700&q=80",
-      seats: "8 Seats",
-      trans: "Automatic",
-      drive: "5.6L V8",
-      luggage: "4-5 Bags",
-      priceDay: 110,
-      priceWeek: 680,
-      rating: 4.6,
+      image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=700&q=80",
+      seats: "5 Seats",
+      trans: "Automatic CVT",
+      drive: "1.5L Turbo / 31 MPG",
+      luggage: "3-4 Bags",
+      priceDay: 78,
+      priceWeek: 470,
+      rating: 4.8,
       year: 2023,
-      dateAdded: "2023-04-12"
+      dateAdded: "2023-11-05"
     },
     {
       id: 7,
-      name: "Chevrolet Equinox LT",
-      subcategory: "compact",
-      tag: "Compact Crossover",
+      name: "Nissan Rogue SV",
+      category: "suv",
+      tag: "Small Crossover",
       badgeClass: "badge-green",
       image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
-      trans: "Automatic",
-      drive: "1.5L Turbo",
-      luggage: "2-3 Bags",
-      priceDay: 72,
-      priceWeek: 430,
-      rating: 4.6,
+      trans: "Automatic Xtronic",
+      drive: "1.5L VC-Turbo / 33 MPG",
+      luggage: "3 Bags",
+      priceDay: 75,
+      priceWeek: 450,
+      rating: 4.7,
       year: 2024,
-      dateAdded: "2024-01-22"
+      dateAdded: "2024-03-18"
     },
     {
       id: 8,
-      name: "Honda CR-V EX",
-      subcategory: "compact",
+      name: "Mazda CX-5 Select",
+      category: "suv",
       tag: "Compact Crossover",
-      badgeClass: "badge-green",
-      image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=700&q=80",
+      badgeClass: "badge-navy",
+      image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
-      trans: "Automatic",
-      drive: "1.5L Turbo",
+      trans: "6-Speed Auto",
+      drive: "2.5L AWD / 28 MPG",
       luggage: "3 Bags",
-      priceDay: 78,
-      priceWeek: 470,
-      rating: 4.9,
+      priceDay: 76,
+      priceWeek: 460,
+      rating: 4.8,
       year: 2023,
-      dateAdded: "2023-06-30"
+      dateAdded: "2023-09-28"
     }
   ];
 
-  let currentSubcategory = 'all';
+  let currentCategory = 'all';
   let currentSort = 'newest';
   let selectedCarForModal = null;
 
@@ -1201,12 +1201,12 @@
     const grid = document.getElementById('fleetGrid');
     grid.innerHTML = '';
 
-    // Step 1: Filter by Subcategory
-    let list = currentSubcategory === 'all' 
+    // Filter by Category (All, Sedans, or SUVs)
+    let list = currentCategory === 'all' 
       ? [...fleetData] 
-      : fleetData.filter(car => car.subcategory === currentSubcategory);
+      : fleetData.filter(car => car.category === currentCategory);
 
-    // Step 2: Apply Sorting Order
+    // Sort Handler
     if (currentSort === 'newest') {
       list.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
     } else if (currentSort === 'oldest') {
@@ -1219,7 +1219,7 @@
       list.sort((a, b) => b.rating - a.rating);
     }
 
-    // Step 3: Render Cards
+    // Render Cards
     list.forEach(car => {
       const card = document.createElement('div');
       card.className = 'car-card';
@@ -1232,7 +1232,7 @@
         <div class="car-body">
           <div class="car-title-row">
             <div>
-              <div class="car-category">${car.year} • SUV</div>
+              <div class="car-category">${car.year} • ${car.category.toUpperCase()}</div>
               <h3 class="car-title">${car.name}</h3>
             </div>
           </div>
@@ -1259,9 +1259,9 @@
     });
   }
 
-  // Subcategory Handler
-  function filterSubcategory(subcat, btn = null) {
-    currentSubcategory = subcat;
+  // Category Handler
+  function filterCategory(cat, btn = null) {
+    currentCategory = cat;
     if (btn) {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -1296,7 +1296,7 @@
 
     document.getElementById('modalCarName').innerText = selectedCarForModal.name;
     document.getElementById('modalCarTitle').innerText = `Reserve ${selectedCarForModal.name}`;
-    document.getElementById('modalCarCategory').innerText = `★ ${selectedCarForModal.rating} | ${selectedCarForModal.year} SUV`;
+    document.getElementById('modalCarCategory').innerText = `★ ${selectedCarForModal.rating} | ${selectedCarForModal.year} ${selectedCarForModal.category.toUpperCase()}`;
     document.getElementById('modalCarRate').innerText = `$${selectedCarForModal.priceDay} / day ($${selectedCarForModal.priceWeek} / week)`;
     document.getElementById('modalCarImg').src = selectedCarForModal.image;
     document.getElementById('modalDaysInput').value = 1;
