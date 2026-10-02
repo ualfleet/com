@@ -599,7 +599,7 @@
         <span>★ HOUSTON'S TRUSTED FLEET PARTNER</span>
       </div>
       <h1>Drive Your Next <br><span class="highlight">Adventure.</span></h1>
-      <p>Premium SUVs, heavy-duty trucks, and efficient sedans. Serving Houston individuals, corporate accounts, and insurance replacement rentals with speed and reliability.</p>
+      <p>Reliable SUVs, work trucks, and fuel-efficient sedans. Serving Houston individuals, corporate accounts, and insurance replacement rentals with speed and dependability.</p>
       
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#fleet">Browse 16+ Vehicles</a>
@@ -650,7 +650,7 @@
           <option value="suv">SUVs & Crossovers</option>
           <option value="truck">Trucks & Vans</option>
           <option value="sedan">Sedans</option>
-          <option value="luxury">Luxury & Executive</option>
+          <option value="fullsize">Full-Size & Business</option>
         </select>
       </div>
 
@@ -713,16 +713,15 @@
   <div class="section-header">
     <span class="section-tag">PREMIUM SELECTION</span>
     <h2 class="section-title">Explore Our Houston Rental Fleet</h2>
-    <p class="section-desc">Select from spacious full-size SUVs, heavy-duty work trucks, luxury cruisers, or fuel-efficient daily sedans.</p>
+    <p class="section-desc">Select from spacious full-size SUVs, heavy-duty work trucks, comfortable midsize crossovers, or fuel-efficient daily sedans.</p>
   </div>
 
   <!-- Fleet Category Tabs -->
   <div class="fleet-tabs">
     <button class="tab-btn active" onclick="filterCategory('all', this)">All Fleet (16)</button>
-    <button class="tab-btn" onclick="filterCategory('suv', this)">SUVs (7)</button>
+    <button class="tab-btn" onclick="filterCategory('suv', this)">SUVs & Crossovers (8)</button>
     <button class="tab-btn" onclick="filterCategory('truck', this)">Trucks & Vans (4)</button>
-    <button class="tab-btn" onclick="filterCategory('sedan', this)">Sedans (3)</button>
-    <button class="tab-btn" onclick="filterCategory('luxury', this)">Executive / Luxury (2)</button>
+    <button class="tab-btn" onclick="filterCategory('sedan', this)">Economy & Midsize (4)</button>
   </div>
 
   <!-- Dynamic Vehicle Grid -->
@@ -743,7 +742,7 @@
       <ul class="biz-list">
         <li>Direct insurance claim coordination and billing assistance</li>
         <li>Discounted long-term weekly and monthly corporate rates</li>
-        <li>Full size SUVs and work trucks for business crews and executives</li>
+        <li>Full-size SUVs, sedans, and work trucks for business crews and drivers</li>
         <li>Flexible extension options with hassle-free maintenance</li>
       </ul>
 
@@ -878,7 +877,8 @@
             <select class="form-control" id="formCarSelect">
               <option value="Tahoe">Chevrolet Tahoe Premier</option>
               <option value="Yukon">GMC Yukon XL</option>
-              <option value="Escalade">Cadillac Escalade</option>
+              <option value="RAV4">Toyota RAV4 XLE</option>
+              <option value="Camry">Toyota Camry SE</option>
               <option value="Corolla">Toyota Corolla</option>
               <option value="F150">Ford F-150 SuperCrew</option>
               <option value="Other">Other (Specify in notes)</option>
@@ -966,7 +966,7 @@
           <div class="brand-text">UAL <span>FLEET</span></div>
         </div>
         <p style="color:#9CA3AF; line-height:1.6; font-size:13.5px; margin-bottom:20px;">
-          UAL Fleet LLC is Houston's dependable auto rental service. Providing premium SUVs, work trucks, and efficient sedans for business, leisure, and insurance replacements.
+          UAL Fleet LLC is Houston's dependable auto rental service. Providing reliable SUVs, work trucks, and efficient sedans for business, leisure, and insurance replacements.
         </p>
         <p style="color:var(--white); font-weight:700;">CEO: Mazhar Zahoor</p>
       </div>
@@ -974,10 +974,9 @@
       <div>
         <h4>Fleet Categories</h4>
         <ul class="footer-links">
-          <li><a href="#fleet" onclick="filterCategory('suv')">Full-Size SUVs</a></li>
-          <li><a href="#fleet" onclick="filterCategory('truck')">Pickups & Cargo Vans</a></li>
+          <li><a href="#fleet" onclick="filterCategory('suv')">Full-Size & Midsize SUVs</a></li>
+          <li><a href="#fleet" onclick="filterCategory('truck')">Pickups & Vans</a></li>
           <li><a href="#fleet" onclick="filterCategory('sedan')">Economy & Sedans</a></li>
-          <li><a href="#fleet" onclick="filterCategory('luxury')">Executive & Luxury</a></li>
         </ul>
       </div>
 
@@ -1012,7 +1011,7 @@
 </footer>
 
 <script>
-  // Comprehensive Vehicle Database (16+ Cars & SUVs)
+  // Comprehensive Vehicle Database (16 Practical Normal Cars, SUVs, and Trucks)
   const fleetData = [
     {
       id: 1,
@@ -1032,7 +1031,7 @@
       id: 2,
       name: "GMC Yukon XL",
       category: "suv",
-      tag: "Full Size Luxury",
+      tag: "Full Size SUV",
       badgeClass: "badge-navy",
       image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=700&q=80",
       seats: "8 Seats",
@@ -1044,23 +1043,23 @@
     },
     {
       id: 3,
-      name: "Cadillac Escalade ESV",
-      category: "luxury",
-      tag: "Executive",
-      badgeClass: "badge-orange",
-      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=700&q=80",
-      seats: "7 Seats",
+      name: "Toyota RAV4 XLE",
+      category: "suv",
+      tag: "Customer Favorite",
+      badgeClass: "badge-green",
+      image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80",
+      seats: "5 Seats",
       trans: "Automatic",
-      drive: "6.2L V8",
-      luggage: "5 Bags",
-      priceDay: 210,
-      priceWeek: 1300
+      drive: "AWD / 30 MPG",
+      luggage: "3 Bags",
+      priceDay: 80,
+      priceWeek: 480
     },
     {
       id: 4,
       name: "Ford Explorer XLT",
       category: "suv",
-      tag: "Best Value",
+      tag: "Best Value SUV",
       badgeClass: "badge-green",
       image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80",
       seats: "7 Seats",
@@ -1114,6 +1113,20 @@
     },
     {
       id: 8,
+      name: "Honda CR-V EX",
+      category: "suv",
+      tag: "Family Crossover",
+      badgeClass: "badge-green",
+      image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=700&q=80",
+      seats: "5 Seats",
+      trans: "Automatic",
+      drive: "FWD / 32 MPG",
+      luggage: "3 Bags",
+      priceDay: 78,
+      priceWeek: 470
+    },
+    {
+      id: 9,
       name: "Ford F-150 SuperCrew",
       category: "truck",
       tag: "Heavy Duty Work",
@@ -1127,7 +1140,7 @@
       priceWeek: 720
     },
     {
-      id: 9,
+      id: 10,
       name: "Chevrolet Silverado 1500",
       category: "truck",
       tag: "Crew Cab",
@@ -1141,7 +1154,7 @@
       priceWeek: 700
     },
     {
-      id: 10,
+      id: 11,
       name: "RAM 1500 Bighorn",
       category: "truck",
       tag: "Smooth Ride",
@@ -1155,7 +1168,7 @@
       priceWeek: 720
     },
     {
-      id: 11,
+      id: 12,
       name: "Ford Transit Passenger Van",
       category: "truck",
       tag: "Group Travel",
@@ -1169,7 +1182,7 @@
       priceWeek: 990
     },
     {
-      id: 12,
+      id: 13,
       name: "Toyota Corolla SE",
       category: "sedan",
       tag: "Daily Saver",
@@ -1183,7 +1196,7 @@
       priceWeek: 360
     },
     {
-      id: 13,
+      id: 14,
       name: "Toyota Camry SE",
       category: "sedan",
       tag: "Popular Sedan",
@@ -1197,46 +1210,32 @@
       priceWeek: 410
     },
     {
-      id: 14,
-      name: "Honda Accord Sport",
+      id: 15,
+      name: "Nissan Altima SV",
       category: "sedan",
-      tag: "Comfort Cruiser",
+      tag: "Comfort Midsize",
       badgeClass: "badge-navy",
       image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
       trans: "Automatic",
-      drive: "Turbo",
+      drive: "32 MPG",
       luggage: "3 Bags",
-      priceDay: 72,
-      priceWeek: 430
-    },
-    {
-      id: 15,
-      name: "Lexus ES 350",
-      category: "luxury",
-      tag: "Executive Sedan",
-      badgeClass: "badge-orange",
-      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic",
-      drive: "V6 Luxury",
-      luggage: "3 Bags",
-      priceDay: 125,
-      priceWeek: 790
+      priceDay: 65,
+      priceWeek: 390
     },
     {
       id: 16,
-      name: "Kia Telluride SX",
-      category: "suv",
-      tag: "Premium SUV",
-      badgeClass: "badge-orange",
-      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80",
-      seats: "7 Seats",
+      name: "Chevrolet Malibu LT",
+      category: "sedan",
+      tag: "Business Sedan",
+      badgeClass: "badge-green",
+      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=700&q=80",
+      seats: "5 Seats",
       trans: "Automatic",
-      drive: "AWD",
-      luggage: "4 Bags",
-      priceDay: 115,
-      priceWeek: 710
+      drive: "36 MPG",
+      luggage: "3 Bags",
+      priceDay: 65,
+      priceWeek: 390
     }
   ];
 
