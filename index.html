@@ -599,7 +599,7 @@
         <span>★ HOUSTON'S TRUSTED FLEET PARTNER</span>
       </div>
       <h1>Drive Your Next <br><span class="highlight">Adventure.</span></h1>
-      <p>Reliable SUVs, work trucks, and fuel-efficient sedans. Serving Houston individuals, corporate accounts, and insurance replacement rentals with speed and dependability.</p>
+      <p>Reliable family SUVs, work trucks, and fuel-efficient sedans. Serving Houston individuals, corporate accounts, and insurance replacement rentals with speed and dependability.</p>
       
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#fleet">Browse 16+ Vehicles</a>
@@ -646,11 +646,10 @@
       <div class="form-group">
         <label>Category</label>
         <select class="form-control" id="searchCategory" onchange="filterCategory(this.value)">
-          <option value="all">All Vehicles (16+ Available)</option>
+          <option value="all">All Vehicles (16 Available)</option>
           <option value="suv">SUVs & Crossovers</option>
           <option value="truck">Trucks & Vans</option>
-          <option value="sedan">Sedans</option>
-          <option value="fullsize">Full-Size & Business</option>
+          <option value="sedan">Daily Sedans</option>
         </select>
       </div>
 
@@ -713,7 +712,7 @@
   <div class="section-header">
     <span class="section-tag">PREMIUM SELECTION</span>
     <h2 class="section-title">Explore Our Houston Rental Fleet</h2>
-    <p class="section-desc">Select from spacious full-size SUVs, heavy-duty work trucks, comfortable midsize crossovers, or fuel-efficient daily sedans.</p>
+    <p class="section-desc">Select from practical family SUVs, work trucks, compact crossovers, or fuel-efficient daily sedans.</p>
   </div>
 
   <!-- Fleet Category Tabs -->
@@ -721,7 +720,7 @@
     <button class="tab-btn active" onclick="filterCategory('all', this)">All Fleet (16)</button>
     <button class="tab-btn" onclick="filterCategory('suv', this)">SUVs & Crossovers (8)</button>
     <button class="tab-btn" onclick="filterCategory('truck', this)">Trucks & Vans (4)</button>
-    <button class="tab-btn" onclick="filterCategory('sedan', this)">Economy & Midsize (4)</button>
+    <button class="tab-btn" onclick="filterCategory('sedan', this)">Daily Sedans (4)</button>
   </div>
 
   <!-- Dynamic Vehicle Grid -->
@@ -742,7 +741,7 @@
       <ul class="biz-list">
         <li>Direct insurance claim coordination and billing assistance</li>
         <li>Discounted long-term weekly and monthly corporate rates</li>
-        <li>Full-size SUVs, sedans, and work trucks for business crews and drivers</li>
+        <li>Family SUVs and work trucks for business crews and drivers</li>
         <li>Flexible extension options with hassle-free maintenance</li>
       </ul>
 
@@ -877,6 +876,7 @@
             <select class="form-control" id="formCarSelect">
               <option value="Tahoe">Chevrolet Tahoe Premier</option>
               <option value="Yukon">GMC Yukon XL</option>
+              <option value="CRV">Honda CR-V EX</option>
               <option value="RAV4">Toyota RAV4 XLE</option>
               <option value="Camry">Toyota Camry SE</option>
               <option value="Corolla">Toyota Corolla</option>
@@ -966,7 +966,7 @@
           <div class="brand-text">UAL <span>FLEET</span></div>
         </div>
         <p style="color:#9CA3AF; line-height:1.6; font-size:13.5px; margin-bottom:20px;">
-          UAL Fleet LLC is Houston's dependable auto rental service. Providing reliable SUVs, work trucks, and efficient sedans for business, leisure, and insurance replacements.
+          UAL Fleet LLC is Houston's dependable auto rental service. Providing practical family SUVs, work trucks, and efficient sedans for business, leisure, and insurance replacements.
         </p>
         <p style="color:var(--white); font-weight:700;">CEO: Mazhar Zahoor</p>
       </div>
@@ -974,9 +974,9 @@
       <div>
         <h4>Fleet Categories</h4>
         <ul class="footer-links">
-          <li><a href="#fleet" onclick="filterCategory('suv')">Full-Size & Midsize SUVs</a></li>
+          <li><a href="#fleet" onclick="filterCategory('suv')">SUVs & Crossovers</a></li>
           <li><a href="#fleet" onclick="filterCategory('truck')">Pickups & Vans</a></li>
-          <li><a href="#fleet" onclick="filterCategory('sedan')">Economy & Sedans</a></li>
+          <li><a href="#fleet" onclick="filterCategory('sedan')">Daily Sedans</a></li>
         </ul>
       </div>
 
@@ -1011,13 +1011,13 @@
 </footer>
 
 <script>
-  // Comprehensive Vehicle Database (16 Practical Normal Cars, SUVs, and Trucks)
+  // Practical Vehicle Database with exact matching Unsplash car images
   const fleetData = [
     {
       id: 1,
       name: "Chevrolet Tahoe Premier",
       category: "suv",
-      tag: "Popular SUV",
+      tag: "Full-Size SUV",
       badgeClass: "badge-orange",
       image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80",
       seats: "7 Seats",
@@ -1031,7 +1031,7 @@
       id: 2,
       name: "GMC Yukon XL",
       category: "suv",
-      tag: "Full Size SUV",
+      tag: "Large Family SUV",
       badgeClass: "badge-navy",
       image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=700&q=80",
       seats: "8 Seats",
@@ -1045,7 +1045,7 @@
       id: 3,
       name: "Toyota RAV4 XLE",
       category: "suv",
-      tag: "Customer Favorite",
+      tag: "Popular Crossover",
       badgeClass: "badge-green",
       image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
@@ -1059,7 +1059,7 @@
       id: 4,
       name: "Ford Explorer XLT",
       category: "suv",
-      tag: "Best Value SUV",
+      tag: "Family SUV",
       badgeClass: "badge-green",
       image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80",
       seats: "7 Seats",
@@ -1073,7 +1073,7 @@
       id: 5,
       name: "Jeep Grand Cherokee",
       category: "suv",
-      tag: "All-Terrain",
+      tag: "Midsize SUV",
       badgeClass: "badge-navy",
       image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
@@ -1101,7 +1101,7 @@
       id: 7,
       name: "Chevrolet Trax LT",
       category: "suv",
-      tag: "Compact SUV",
+      tag: "Compact Crossover",
       badgeClass: "badge-green",
       image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
@@ -1115,7 +1115,7 @@
       id: 8,
       name: "Honda CR-V EX",
       category: "suv",
-      tag: "Family Crossover",
+      tag: "Reliable Crossover",
       badgeClass: "badge-green",
       image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
@@ -1185,7 +1185,7 @@
       id: 13,
       name: "Toyota Corolla SE",
       category: "sedan",
-      tag: "Daily Saver",
+      tag: "Economy Saver",
       badgeClass: "badge-green",
       image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
@@ -1213,7 +1213,7 @@
       id: 15,
       name: "Nissan Altima SV",
       category: "sedan",
-      tag: "Comfort Midsize",
+      tag: "Midsize Comfort",
       badgeClass: "badge-navy",
       image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
@@ -1227,7 +1227,7 @@
       id: 16,
       name: "Chevrolet Malibu LT",
       category: "sedan",
-      tag: "Business Sedan",
+      tag: "Daily Commuter",
       badgeClass: "badge-green",
       image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
