@@ -544,7 +544,7 @@
       <span>⏰ Mon - Sat: 8:00 AM - 7:00 PM</span>
     </div>
     <div>
-      <span>✉️ info@ualfleet.com</span>
+      <span>✉️️ info@ualfleet.com</span>
     </div>
   </div>
 </div>
@@ -602,7 +602,7 @@
       <p>Reliable family SUVs, work trucks, and fuel-efficient sedans. Serving Houston individuals, corporate accounts, and insurance replacement rentals with speed and dependability.</p>
       
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="#fleet">Browse 16+ Vehicles</a>
+        <a class="btn btn-primary" href="#fleet">Browse SUVs</a>
         <a class="btn btn-ghost-white" href="tel:+18328441156">Call (832) 844-1156</a>
       </div>
 
@@ -646,10 +646,8 @@
       <div class="form-group">
         <label>Category</label>
         <select class="form-control" id="searchCategory" onchange="filterCategory(this.value)">
-          <option value="all">All Vehicles (16 Available)</option>
+          <option value="all">All SUVs (8 Available)</option>
           <option value="suv">SUVs & Crossovers</option>
-          <option value="truck">Trucks & Vans</option>
-          <option value="sedan">Daily Sedans</option>
         </select>
       </div>
 
@@ -711,16 +709,14 @@
 <section class="fleet-section wrap" id="fleet">
   <div class="section-header">
     <span class="section-tag">PREMIUM SELECTION</span>
-    <h2 class="section-title">Explore Our Houston Rental Fleet</h2>
-    <p class="section-desc">Select from practical family SUVs, work trucks, compact crossovers, or fuel-efficient daily sedans.</p>
+    <h2 class="section-title">Explore Our Houston SUV Rental Fleet</h2>
+    <p class="section-desc">Select from practical family SUVs, full-size 3-row vehicles, and fuel-efficient crossovers.</p>
   </div>
 
   <!-- Fleet Category Tabs -->
   <div class="fleet-tabs">
-    <button class="tab-btn active" onclick="filterCategory('all', this)">All Fleet (16)</button>
+    <button class="tab-btn active" onclick="filterCategory('all', this)">All SUVs (8)</button>
     <button class="tab-btn" onclick="filterCategory('suv', this)">SUVs & Crossovers (8)</button>
-    <button class="tab-btn" onclick="filterCategory('truck', this)">Trucks & Vans (4)</button>
-    <button class="tab-btn" onclick="filterCategory('sedan', this)">Daily Sedans (4)</button>
   </div>
 
   <!-- Dynamic Vehicle Grid -->
@@ -741,7 +737,7 @@
       <ul class="biz-list">
         <li>Direct insurance claim coordination and billing assistance</li>
         <li>Discounted long-term weekly and monthly corporate rates</li>
-        <li>Family SUVs and work trucks for business crews and drivers</li>
+        <li>Family SUVs for business crews, travel, and personal drivers</li>
         <li>Flexible extension options with hassle-free maintenance</li>
       </ul>
 
@@ -876,11 +872,12 @@
             <select class="form-control" id="formCarSelect">
               <option value="Tahoe">Chevrolet Tahoe Premier</option>
               <option value="Yukon">GMC Yukon XL</option>
-              <option value="CRV">Honda CR-V EX</option>
               <option value="RAV4">Toyota RAV4 XLE</option>
-              <option value="Camry">Toyota Camry SE</option>
-              <option value="Corolla">Toyota Corolla</option>
-              <option value="F150">Ford F-150 SuperCrew</option>
+              <option value="Explorer">Ford Explorer XLT</option>
+              <option value="Grand Cherokee">Jeep Grand Cherokee Laredo</option>
+              <option value="Armada">Nissan Armada SL</option>
+              <option value="Trax">Chevrolet Trax LT</option>
+              <option value="CRV">Honda CR-V EX</option>
               <option value="Other">Other (Specify in notes)</option>
             </select>
           </div>
@@ -966,7 +963,7 @@
           <div class="brand-text">UAL <span>FLEET</span></div>
         </div>
         <p style="color:#9CA3AF; line-height:1.6; font-size:13.5px; margin-bottom:20px;">
-          UAL Fleet LLC is Houston's dependable auto rental service. Providing practical family SUVs, work trucks, and efficient sedans for business, leisure, and insurance replacements.
+          UAL Fleet LLC is Houston's dependable auto rental service. Providing practical family SUVs and versatile crossovers for business, leisure, and insurance replacements.
         </p>
         <p style="color:var(--white); font-weight:700;">CEO: Mazhar Zahoor</p>
       </div>
@@ -975,8 +972,6 @@
         <h4>Fleet Categories</h4>
         <ul class="footer-links">
           <li><a href="#fleet" onclick="filterCategory('suv')">SUVs & Crossovers</a></li>
-          <li><a href="#fleet" onclick="filterCategory('truck')">Pickups & Vans</a></li>
-          <li><a href="#fleet" onclick="filterCategory('sedan')">Daily Sedans</a></li>
         </ul>
       </div>
 
@@ -995,7 +990,7 @@
         <h4>Houston Location</h4>
         <p style="color:#9CA3AF; margin-bottom:10px;">📍 5719 Edward Dr, Houston TX 77032</p>
         <p style="color:#9CA3AF; margin-bottom:10px;">📞 <a href="tel:+18328441156" style="color:white; font-weight:700;">(832) 844-1156</a></p>
-        <p style="color:#9CA3AF;">✉️ info@ualfleet.com</p>
+        <p style="color:#9CA3AF;">✉️️ info@ualfleet.com</p>
       </div>
     </div>
 
@@ -1011,7 +1006,7 @@
 </footer>
 
 <script>
-  // Strictly Practical SUV, Truck, and Everyday Sedan Database with verified standard car images
+  // Strictly Practical SUV Database (8 non-luxury, mainstream SUVs/Crossovers)
   const fleetData = [
     {
       id: 1,
@@ -1071,7 +1066,7 @@
     },
     {
       id: 5,
-      name: "Jeep Grand Cherokee",
+      name: "Jeep Grand Cherokee Laredo",
       category: "suv",
       tag: "Midsize SUV",
       badgeClass: "badge-navy",
@@ -1124,118 +1119,6 @@
       luggage: "3 Bags",
       priceDay: 78,
       priceWeek: 470
-    },
-    {
-      id: 9,
-      name: "Ford F-150 SuperCrew",
-      category: "truck",
-      tag: "Heavy Duty Work",
-      badgeClass: "badge-orange",
-      image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic",
-      drive: "4x4 Towing",
-      luggage: "Truck Bed",
-      priceDay: 115,
-      priceWeek: 720
-    },
-    {
-      id: 10,
-      name: "Chevrolet Silverado 1500",
-      category: "truck",
-      tag: "Crew Cab",
-      badgeClass: "badge-navy",
-      image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=700&q=80",
-      seats: "6 Seats",
-      trans: "Automatic",
-      drive: "V8 Engine",
-      luggage: "Truck Bed",
-      priceDay: 110,
-      priceWeek: 700
-    },
-    {
-      id: 11,
-      name: "RAM 1500 Bighorn",
-      category: "truck",
-      tag: "Smooth Ride",
-      badgeClass: "badge-navy",
-      image: "https://images.unsplash.com/photo-1609521263047-f8d205293f24?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic",
-      drive: "HEMI V8",
-      luggage: "Truck Bed",
-      priceDay: 115,
-      priceWeek: 720
-    },
-    {
-      id: 12,
-      name: "Ford Transit Passenger Van",
-      category: "truck",
-      tag: "Group Travel",
-      badgeClass: "badge-green",
-      image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=700&q=80",
-      seats: "12 Seats",
-      trans: "Automatic",
-      drive: "High Roof",
-      luggage: "8 Bags",
-      priceDay: 160,
-      priceWeek: 990
-    },
-    {
-      id: 13,
-      name: "Toyota Corolla SE",
-      category: "sedan",
-      tag: "Economy Saver",
-      badgeClass: "badge-green",
-      image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic",
-      drive: "38 MPG",
-      luggage: "2 Bags",
-      priceDay: 60,
-      priceWeek: 360
-    },
-    {
-      id: 14,
-      name: "Toyota Camry SE",
-      category: "sedan",
-      tag: "Popular Sedan",
-      badgeClass: "badge-navy",
-      image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic",
-      drive: "Smooth Drive",
-      luggage: "3 Bags",
-      priceDay: 68,
-      priceWeek: 410
-    },
-    {
-      id: 15,
-      name: "Nissan Altima SV",
-      category: "sedan",
-      tag: "Midsize Comfort",
-      badgeClass: "badge-navy",
-      image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic",
-      drive: "32 MPG",
-      luggage: "3 Bags",
-      priceDay: 65,
-      priceWeek: 390
-    },
-    {
-      id: 16,
-      name: "Chevrolet Malibu LT",
-      category: "sedan",
-      tag: "Daily Commuter",
-      badgeClass: "badge-green",
-      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic",
-      drive: "36 MPG",
-      luggage: "3 Bags",
-      priceDay: 65,
-      priceWeek: 390
     }
   ];
 
