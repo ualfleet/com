@@ -10,21 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #0B1E3D;
-      --navy-2: #132A52;
-      --navy-dark: #061126;
-      --blue-accent: #2563EB;
-      --orange: #F6871F;
-      --orange-hover: #E0730F;
-      --paper: #F8FAFC;
+      --primary-bright: #2563EB;
+      --primary-dark: #1E40AF;
+      --orange-bright: #FF6B00;
+      --orange-hover: #E05D00;
+      --orange-light: rgba(255, 107, 0, 0.1);
+      --bg-light: #F0F4F9;
       --white: #FFFFFF;
       --ink: #0F172A;
-      --muted: #64748B;
+      --muted: #475569;
       --border: #E2E8F0;
-      --card-shadow: 0 10px 25px -5px rgba(11, 30, 61, 0.06);
-      --card-hover-shadow: 0 20px 30px -5px rgba(11, 30, 61, 0.15);
-      padding-top: env(safe-area-inset-top, 0px);
-      padding-bottom: env(safe-area-inset-bottom, 0px);
+      --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 20px 35px rgba(15, 23, 42, 0.1);
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,13 +29,12 @@
     body {
       font-family: 'Inter', sans-serif;
       color: var(--ink);
-      background: var(--paper);
+      background: var(--bg-light);
       line-height: 1.6;
-      overflow-x: hidden;
     }
     
     h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
-    a { color: inherit; text-decoration: none; transition: all 0.25s ease; }
+    a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
     img { max-width: 100%; height: auto; display: block; }
     button, input, select, textarea { font-family: inherit; }
 
@@ -48,16 +44,16 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 20px;
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    .badge-orange { background: rgba(246, 135, 31, 0.12); color: var(--orange); }
-    .badge-blue { background: rgba(37, 99, 235, 0.1); color: var(--blue-accent); }
-    .badge-star { background: #FFFBEB; color: #D97706; border: 1px solid #FDE68A; }
+    .badge-blue { background: rgba(37, 99, 235, 0.12); color: var(--primary-bright); }
+    .badge-orange { background: var(--orange-light); color: var(--orange-bright); }
+    .badge-star { background: #FEF3C7; color: #D97706; border: 1px solid #FDE68A; }
 
     .btn {
       display: inline-flex;
@@ -66,127 +62,111 @@
       gap: 8px;
       padding: 12px 24px;
       border-radius: 8px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 14px;
       cursor: pointer;
       border: none;
       transition: all 0.25s ease;
       text-align: center;
     }
-    .btn-primary { background: var(--orange); color: var(--white); box-shadow: 0 4px 14px rgba(246, 135, 31, 0.35); }
-    .btn-primary:hover { background: var(--orange-hover); transform: translateY(-2px); }
-    .btn-navy { background: var(--navy); color: var(--white); }
-    .btn-navy:hover { background: var(--navy-2); transform: translateY(-2px); }
-    .btn-blue { background: var(--blue-accent); color: var(--white); }
-    .btn-blue:hover { background: #1D4ED8; transform: translateY(-2px); }
+    .btn-orange { background: var(--orange-bright); color: var(--white); box-shadow: 0 4px 14px rgba(255, 107, 0, 0.3); }
+    .btn-orange:hover { background: var(--orange-hover); transform: translateY(-2px); }
+    .btn-blue { background: var(--primary-bright); color: var(--white); box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); }
+    .btn-blue:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .btn-outline { border: 2px solid var(--primary-bright); color: var(--primary-bright); background: transparent; }
+    .btn-outline:hover { background: var(--primary-bright); color: var(--white); }
 
-    /* Top Strip Header */
+    /* Top Strip */
     .top-strip {
-      background: var(--navy-dark);
-      color: rgba(255,255,255,0.7);
-      font-size: 12px;
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: var(--white);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
     }
     .top-strip .wrap { display: flex; justify-content: space-between; align-items: center; }
     .top-info { display: flex; gap: 24px; }
-    .top-info span { display: flex; align-items: center; gap: 6px; }
 
-    /* Navigation */
+    /* Navigation Header */
     header {
       position: sticky;
-      top: env(safe-area-inset-top, 0px);
+      top: 0;
       z-index: 100;
-      background: var(--navy);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-bottom: 1px solid var(--border);
     }
     nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1240px; margin: 0 auto; }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Poppins';
-      font-weight: 900;
-      font-size: 22px;
-      color: var(--white);
-    }
+    .brand { display: flex; align-items: center; gap: 12px; font-family: 'Poppins'; font-weight: 900; font-size: 24px; color: var(--ink); }
     .brand-logo-icon {
-      width: 38px;
-      height: 38px;
-      background: var(--orange);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-weight: 900;
-      font-size: 20px;
+      width: 42px; height: 42px;
+      background: linear-gradient(135deg, var(--primary-bright) 0%, var(--primary-dark) 100%);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); font-weight: 900; font-size: 22px;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
     }
-    .brand-text span { color: var(--orange); }
-    .brand-sub { display: block; font-size: 9px; font-weight: 600; color: #9CA3AF; letter-spacing: 0.15em; margin-top: -3px; }
+    .brand-text span { color: var(--orange-bright); }
+    .brand-sub { display: block; font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: 0.15em; margin-top: -4px; }
 
-    .navlinks { display: flex; gap: 28px; font-weight: 500; font-size: 14px; color: #D1D5DB; }
-    .navlinks a:hover { color: var(--white); }
+    .navlinks { display: flex; gap: 32px; font-weight: 600; font-size: 15px; color: var(--ink); }
+    .navlinks a:hover { color: var(--primary-bright); }
 
     .nav-actions { display: flex; align-items: center; gap: 16px; }
     .nav-phone {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--white);
-      font-weight: 700;
-      font-size: 14px;
-      background: rgba(255,255,255,0.08);
-      padding: 8px 14px;
-      border-radius: 6px;
-      border: 1px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; gap: 8px;
+      color: var(--primary-bright); font-weight: 800; font-size: 15px;
+      background: rgba(37, 99, 235, 0.08); padding: 10px 16px; border-radius: 8px;
+      border: 1px solid rgba(37, 99, 235, 0.2);
     }
+    .nav-phone:hover { background: var(--primary-bright); color: var(--white); }
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #061126 0%, #0B1E3D 50%, #132A52 100%);
-      color: var(--white);
-      padding: 80px 0 120px;
-      position: relative;
+      background: linear-gradient(135deg, #FFFFFF 0%, #EBF3FF 100%);
+      padding: 70px 0 110px;
+      border-bottom: 1px solid var(--border);
     }
     .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
     .hero-tag {
       display: inline-block;
-      background: rgba(37, 99, 235, 0.2);
-      color: #60A5FA;
+      background: var(--orange-light);
+      color: var(--orange-bright);
       padding: 6px 16px;
       border-radius: 30px;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 20px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
-    .hero h1 { font-size: 50px; line-height: 1.1; font-weight: 900; margin-bottom: 20px; }
-    .hero p { font-size: 17px; color: #94A3B8; margin-bottom: 32px; max-width: 520px; }
+    .hero h1 { font-size: 52px; line-height: 1.1; font-weight: 900; color: var(--ink); margin-bottom: 20px; }
+    .hero h1 span { color: var(--primary-bright); }
+    .hero p { font-size: 18px; color: var(--muted); margin-bottom: 32px; max-width: 540px; }
     
     .hero-stats {
       display: flex;
-      gap: 32px;
+      gap: 36px;
       padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid var(--border);
     }
-    .stat-num { font-size: 26px; font-weight: 800; color: var(--white); }
-    .stat-num span { color: var(--orange); }
-    .stat-lbl { font-size: 12px; color: #94A3B8; text-transform: uppercase; }
+    .stat-num { font-size: 28px; font-weight: 900; color: var(--ink); }
+    .stat-num span { color: var(--orange-bright); }
+    .stat-lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; font-weight: 700; }
 
     /* Search Bar Overlay */
-    .search-wrapper { margin-top: -60px; position: relative; z-index: 10; padding: 0 24px; }
+    .search-wrapper { margin-top: -50px; position: relative; z-index: 10; padding: 0 24px; }
     .search-card {
       background: var(--white);
       border-radius: 16px;
       padding: 24px 32px;
-      box-shadow: var(--card-hover-shadow);
+      box-shadow: var(--shadow-lg);
       border: 1px solid var(--border);
     }
     .search-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr auto; gap: 16px; align-items: end; }
     .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-group label { font-size: 11px; font-weight: 700; color: var(--navy); text-transform: uppercase; }
+    .form-group label { font-size: 11px; font-weight: 800; color: var(--ink); text-transform: uppercase; }
     .form-control {
       width: 100%;
       padding: 12px 14px;
@@ -194,29 +174,31 @@
       border-radius: 8px;
       font-size: 14px;
       color: var(--ink);
-      background: var(--paper);
+      background: var(--bg-light);
     }
+    .form-control:focus { border-color: var(--primary-bright); background: var(--white); outline: none; }
 
     /* Category Showcase */
     .section-block { padding: 80px 0; }
     .section-title-wrap { text-align: center; margin-bottom: 48px; }
-    .section-tag { color: var(--orange); font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 8px; }
-    .section-title { font-size: 36px; color: var(--navy); font-weight: 800; }
+    .section-tag { color: var(--orange-bright); font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 8px; }
+    .section-title { font-size: 38px; color: var(--ink); font-weight: 900; }
 
-    .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
     .cat-card {
       background: var(--white);
-      border-radius: 12px;
-      padding: 20px;
+      border-radius: 16px;
+      padding: 24px;
       border: 1px solid var(--border);
       text-align: center;
       transition: all 0.3s ease;
       cursor: pointer;
+      box-shadow: var(--shadow-sm);
     }
-    .cat-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow); border-color: var(--orange); }
-    .cat-card img { height: 90px; object-fit: contain; margin: 0 auto 12px; }
-    .cat-card h4 { font-size: 16px; color: var(--navy); font-weight: 700; }
-    .cat-card p { font-size: 13px; color: var(--muted); }
+    .cat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--primary-bright); }
+    .cat-card img { height: 100px; object-fit: contain; margin: 0 auto 16px; border-radius: 8px; }
+    .cat-card h4 { font-size: 17px; color: var(--ink); font-weight: 800; }
+    .cat-card p { font-size: 13px; color: var(--muted); margin-top: 4px; }
 
     /* Fleet Section & Controls */
     .fleet-controls-bar {
@@ -228,100 +210,108 @@
       border-radius: 12px;
       border: 1px solid var(--border);
       margin-bottom: 32px;
+      box-shadow: var(--shadow-sm);
       flex-wrap: wrap;
       gap: 16px;
     }
-    .fleet-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .fleet-tabs { display: flex; gap: 10px; flex-wrap: wrap; }
     .tab-btn {
-      padding: 8px 16px;
-      border-radius: 20px;
-      background: var(--paper);
+      padding: 10px 20px;
+      border-radius: 25px;
+      background: var(--bg-light);
       border: 1px solid var(--border);
-      color: var(--navy);
-      font-weight: 600;
+      color: var(--ink);
+      font-weight: 700;
       font-size: 13px;
       cursor: pointer;
+      transition: all 0.2s ease;
     }
-    .tab-btn.active, .tab-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .tab-btn.active, .tab-btn:hover { background: var(--primary-bright); color: var(--white); border-color: var(--primary-bright); }
 
     .fleet-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
     .car-card {
       background: var(--white);
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
       border: 1px solid var(--border);
       transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
+      box-shadow: var(--shadow-sm);
       position: relative;
     }
-    .car-card:hover { transform: translateY(-6px); box-shadow: var(--card-hover-shadow); }
-    .car-card-img { height: 180px; background: #F1F5F9; position: relative; overflow: hidden; }
+    .car-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--primary-bright); }
+    .car-card-img { height: 190px; background: #F8FAFC; position: relative; overflow: hidden; }
     .car-card-img img { width: 100%; height: 100%; object-fit: cover; }
-    .car-top-badge { position: absolute; top: 12px; left: 12px; }
-    .car-rating-badge { position: absolute; top: 12px; right: 12px; }
+    .car-top-badge { position: absolute; top: 12px; left: 12px; z-index: 2; }
+    .car-rating-badge { position: absolute; top: 12px; right: 12px; z-index: 2; }
+    
     .car-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-    .car-title { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
-    .car-sub { font-size: 12px; color: var(--orange); font-weight: 600; text-transform: uppercase; margin-bottom: 12px; }
+    .car-sub { font-size: 12px; color: var(--primary-bright); font-weight: 800; text-transform: uppercase; margin-bottom: 4px; }
+    .car-title { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 12px; }
     
     .car-specs {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 8px;
-      background: var(--paper);
-      padding: 10px;
-      border-radius: 8px;
+      background: var(--bg-light);
+      padding: 12px;
+      border-radius: 10px;
       margin-bottom: 16px;
       font-size: 12px;
+      font-weight: 600;
       color: var(--ink);
     }
 
-    .car-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); }
-    .car-price strong { font-size: 20px; color: var(--navy); font-weight: 800; }
+    .car-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); }
+    .car-price { font-size: 12px; color: var(--muted); }
+    .car-price strong { font-size: 22px; color: var(--ink); font-weight: 900; }
 
     /* How It Works */
-    .how-it-works { background: var(--white); padding: 80px 0; }
+    .how-it-works { background: var(--white); padding: 80px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
-    .step-card { padding: 32px 24px; background: var(--paper); border-radius: 16px; border: 1px solid var(--border); }
+    .step-card { padding: 36px 24px; background: var(--bg-light); border-radius: 16px; border: 1px solid var(--border); }
     .step-icon {
-      width: 60px; height: 60px;
+      width: 64px; height: 64px;
       border-radius: 50%;
-      background: var(--navy);
+      background: var(--primary-bright);
       color: var(--white);
       display: flex; align-items: center; justify-content: center;
-      font-size: 22px; font-weight: 800;
+      font-size: 24px; font-weight: 900;
       margin: 0 auto 20px;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
     }
 
     /* Testimonials */
     .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .review-card { background: var(--white); padding: 28px; border-radius: 12px; border: 1px solid var(--border); }
+    .review-card { background: var(--white); padding: 28px; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
     
-    /* Promo Banner Strip */
+    /* Promo Banner */
     .promo-banner {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+      background: linear-gradient(135deg, var(--primary-bright) 0%, var(--primary-dark) 100%);
       color: var(--white);
-      padding: 50px 0;
-      border-radius: 20px;
+      padding: 50px;
+      border-radius: 24px;
       margin: 40px auto;
       text-align: center;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
     }
 
     /* Footer */
-    footer { background: var(--navy-dark); color: #94A3B8; padding: 70px 0 30px; font-size: 14px; }
+    footer { background: #0B1727; color: #94A3B8; padding: 70px 0 30px; font-size: 14px; }
     .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; margin-bottom: 40px; }
-    .footer-col h4 { color: var(--white); font-size: 16px; font-weight: 700; margin-bottom: 20px; }
-    .footer-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+    .footer-col h4 { color: var(--white); font-size: 16px; font-weight: 800; margin-bottom: 20px; }
+    .footer-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13px; }
 
     /* Modal Overlay */
     .modal-overlay {
       position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(6, 17, 38, 0.8); backdrop-filter: blur(6px);
+      background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(6px);
       z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px;
     }
     .modal-overlay.active { display: flex; }
-    .modal-box { background: var(--white); width: 100%; max-width: 580px; border-radius: 16px; overflow: hidden; }
-    .modal-header { background: var(--navy); color: var(--white); padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
+    .modal-box { background: var(--white); width: 100%; max-width: 580px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); }
+    .modal-header { background: var(--primary-bright); color: var(--white); padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
 
     @media(max-width: 1024px) {
       .hero-inner { grid-template-columns: 1fr; text-align: center; }
@@ -333,12 +323,13 @@
       .category-grid, .fleet-grid, .steps-grid, .reviews-grid { grid-template-columns: 1fr; }
       .search-grid { grid-template-columns: 1fr; }
       .top-strip { display: none; }
+      .hero h1 { font-size: 38px; }
     }
   </style>
 </head>
 <body>
 
-<!-- Top Info Strip -->
+<!-- Top Information Strip -->
 <div class="top-strip">
   <div class="wrap">
     <div class="top-info">
@@ -351,7 +342,7 @@
   </div>
 </div>
 
-<!-- Header Navigation -->
+<!-- Navigation Header -->
 <header>
   <nav>
     <a href="#" class="brand">
@@ -364,7 +355,7 @@
 
     <div class="navlinks">
       <a href="#home">Home</a>
-      <a href="#categories">Explore</a>
+      <a href="#categories">Categories</a>
       <a href="#fleet">Our Fleet</a>
       <a href="#how">How It Works</a>
       <a href="#reviews">Reviews</a>
@@ -375,32 +366,32 @@
       <a class="nav-phone" href="tel:+18328441156">
         <span>📞</span> (832) 844-1156
       </a>
-      <a class="btn btn-primary" href="#contact">Book Now</a>
+      <a class="btn btn-orange" href="#contact">Book Now</a>
     </div>
   </nav>
 </header>
 
-<!-- Hero Section -->
+<!-- Hero Banner Section -->
 <section class="hero" id="home">
   <div class="wrap hero-inner">
     <div>
-      <span class="hero-tag">IT EXPERT SOLUTION & FLEET PARTNER</span>
-      <h1>Drive Your Journey <br>Your Way.</h1>
-      <p>Reliable daily sedans and practical small crossovers. Serving Houston individuals, corporate accounts, and insurance replacement rentals with zero hidden fees.</p>
+      <span class="hero-tag">★ HOUSTON'S DEPENDABLE AUTO RENTALS</span>
+      <h1>Drive Everyday Quality <span>For Less.</span></h1>
+      <p>Reliable everyday sedans and compact crossovers in Houston, TX. Perfect for daily commuters, business travel, and insurance replacement rentals.</p>
       
       <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:32px;">
-        <a class="btn btn-primary" href="#fleet">Explore All Cars</a>
-        <a class="btn btn-blue" href="tel:+18328441156">Call (832) 844-1156</a>
+        <a class="btn btn-orange" href="#fleet">View Available Cars</a>
+        <a class="btn btn-outline" href="tel:+18328441156">Call (832) 844-1156</a>
       </div>
 
       <div class="hero-stats">
         <div>
-          <div class="stat-num">25,000<span>+</span></div>
-          <div class="stat-lbl">Happy Customers</div>
+          <div class="stat-num">100<span>%</span></div>
+          <div class="stat-lbl">Inspected Vehicles</div>
         </div>
         <div>
-          <div class="stat-num">100<span>%</span></div>
-          <div class="stat-lbl">Serviced Fleet</div>
+          <div class="stat-num">24<span>/7</span></div>
+          <div class="stat-lbl">Houston Support</div>
         </div>
         <div>
           <div class="stat-num">4.9<span>★</span></div>
@@ -410,12 +401,12 @@
     </div>
 
     <div>
-      <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80" alt="Rental Car Houston" style="border-radius:16px; box-shadow: 0 25px 50px rgba(0,0,0,0.5);">
+      <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80" alt="Toyota Camry Houston Rental" style="border-radius:20px; box-shadow: var(--shadow-lg);">
     </div>
   </div>
 </section>
 
-<!-- Search Filter Overlay -->
+<!-- Search Reservation Filter Overlay -->
 <div class="search-wrapper wrap">
   <div class="search-card">
     <div class="search-grid">
@@ -431,7 +422,7 @@
       <div class="form-group">
         <label>Car Category</label>
         <select class="form-control" id="searchCategory" onchange="filterCategory(this.value)">
-          <option value="all">All Vehicles (8 Available)</option>
+          <option value="all">All Fleet (8 Available)</option>
           <option value="sedan">Everyday Sedans</option>
           <option value="suv">Compact Crossovers & Small SUVs</option>
         </select>
@@ -447,28 +438,28 @@
         <input type="date" class="form-control" id="searchDropDate">
       </div>
 
-      <button class="btn btn-primary" style="height: 46px;" onclick="scrollToFleet()">
+      <button class="btn btn-orange" style="height: 46px;" onclick="scrollToFleet()">
         Find Available Cars
       </button>
     </div>
   </div>
 </div>
 
-<!-- Explore Car Categories -->
+<!-- Category Showcase Grid -->
 <section class="section-block wrap" id="categories">
   <div class="section-title-wrap">
     <span class="section-tag">CATEGORIES</span>
-    <h2 class="section-title">Explore Our Car Categories</h2>
+    <h2 class="section-title">Explore Car Options</h2>
   </div>
 
   <div class="category-grid">
     <div class="cat-card" onclick="filterCategory('sedan')">
-      <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=400&q=80" alt="Sedans">
+      <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=400&q=80" alt="Everyday Sedans">
       <h4>Everyday Sedans</h4>
       <p>Toyota Camry, Corolla & Civic</p>
     </div>
     <div class="cat-card" onclick="filterCategory('suv')">
-      <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=400&q=80" alt="Compact SUVs">
+      <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=400&q=80" alt="Small SUVs">
       <h4>Small SUVs & Crossovers</h4>
       <p>RAV4, CR-V, Rogue & CX-5</p>
     </div>
@@ -479,7 +470,7 @@
     </div>
     <div class="cat-card" onclick="filterCategory('all')">
       <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=400&q=80" alt="Corporate Rentals">
-      <h4>Corporate Rentals</h4>
+      <h4>Corporate Accounts</h4>
       <p>Weekly & Monthly Discounts</p>
     </div>
   </div>
@@ -500,7 +491,7 @@
     </div>
 
     <div style="display:flex; align-items:center; gap:10px;">
-      <label style="font-size:12px; font-weight:700; color:var(--navy);">SORT BY:</label>
+      <label style="font-size:12px; font-weight:800; color:var(--ink);">SORT BY:</label>
       <select class="form-control" style="width:auto; padding:6px 12px; font-size:13px;" onchange="applySort(this.value)">
         <option value="newest">Newest First</option>
         <option value="oldest">Oldest First</option>
@@ -512,7 +503,7 @@
   </div>
 
   <div class="fleet-grid" id="fleetGrid">
-    <!-- Rendered Dynamically -->
+    <!-- Populated Dynamically via JavaScript -->
   </div>
 </section>
 
@@ -520,25 +511,25 @@
 <section class="how-it-works" id="how">
   <div class="wrap">
     <div class="section-title-wrap">
-      <span class="section-tag">EASY PROCESS</span>
+      <span class="section-tag">SIMPLE PROCESS</span>
       <h2 class="section-title">How It Works</h2>
     </div>
 
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-icon">1</div>
-        <h3 style="margin-bottom:10px; color:var(--navy);">Search & Select</h3>
-        <p style="color:var(--muted); font-size:14px;">Browse our everyday sedans or crossovers and pick your preferred pickup date.</p>
+        <h3 style="margin-bottom:10px; color:var(--ink);">Choose Your Car</h3>
+        <p style="color:var(--muted); font-size:14px;">Browse our normal sedans or compact crossovers and select your dates.</p>
       </div>
       <div class="step-card">
         <div class="step-icon">2</div>
-        <h3 style="margin-bottom:10px; color:var(--navy);">Reserve & Confirm</h3>
-        <p style="color:var(--muted); font-size:14px;">Fill in your details or call CEO Mazhar Zahoor for quick confirmation.</p>
+        <h3 style="margin-bottom:10px; color:var(--ink);">Reserve Instantly</h3>
+        <p style="color:var(--muted); font-size:14px;">Fill out the reservation request or speak directly with CEO Mazhar Zahoor.</p>
       </div>
       <div class="step-card">
         <div class="step-icon">3</div>
-        <h3 style="margin-bottom:10px; color:var(--navy);">Drive Away</h3>
-        <p style="color:var(--muted); font-size:14px;">Pick up your sanitized, fully inspected car at 5719 Edward Dr, Houston.</p>
+        <h3 style="margin-bottom:10px; color:var(--ink);">Drive Away</h3>
+        <p style="color:var(--muted); font-size:14px;">Pick up your sanitized, fully serviced car at 5719 Edward Dr, Houston.</p>
       </div>
     </div>
   </div>
@@ -547,9 +538,9 @@
 <!-- Promo Discount Banner -->
 <div class="wrap">
   <div class="promo-banner">
-    <h2 style="font-size:28px; font-weight:800; margin-bottom:10px;">Get 10% Off On Your First Rental</h2>
-    <p style="color:#CBD5E1; margin-bottom:20px;">Use promo code <strong>UALHOUSTON</strong> or call us directly to apply instant savings.</p>
-    <a class="btn btn-primary" href="tel:+18328441156">Call (832) 844-1156 Now</a>
+    <h2 style="font-size:32px; font-weight:900; margin-bottom:10px;">Get 10% Off On Your First Rental</h2>
+    <p style="color:#E2E8F0; margin-bottom:24px; font-size:16px;">Mention promo code <strong>UALHOUSTON</strong> or call us directly to lock in instant savings.</p>
+    <a class="btn btn-orange" href="tel:+18328441156">Call (832) 844-1156 Now</a>
   </div>
 </div>
 
@@ -557,28 +548,28 @@
 <section class="section-block wrap" id="reviews">
   <div class="section-title-wrap">
     <span class="section-tag">TESTIMONIALS</span>
-    <h2 class="section-title">What Our Customers Say</h2>
+    <h2 class="section-title">What Our Drivers Say</h2>
   </div>
 
   <div class="reviews-grid">
     <div class="review-card">
-      <div style="color:#F59E0B; margin-bottom:10px;">★★★★★</div>
-      <p style="font-size:14px; color:var(--ink); margin-bottom:16px;">"Renting the Toyota Camry was seamless. Super clean car, great gas mileage, and transparent pricing with no airport markup."</p>
-      <div style="font-weight:700; color:var(--navy); font-size:14px;">David Miller</div>
+      <div style="color:#F59E0B; margin-bottom:10px; font-size:18px;">★★★★★</div>
+      <p style="font-size:14px; color:var(--ink); margin-bottom:16px;">"Renting the Toyota Camry SE was smooth and easy. Super clean car, great fuel economy, and clear pricing with no surprise fees."</p>
+      <div style="font-weight:800; color:var(--ink); font-size:14px;">David Miller</div>
       <div style="font-size:12px; color:var(--muted);">Insurance Replacement • Houston TX</div>
     </div>
 
     <div class="review-card">
-      <div style="color:#F59E0B; margin-bottom:10px;">★★★★★</div>
-      <p style="font-size:14px; color:var(--ink); margin-bottom:16px;">"We needed two crossovers for visiting corporate consultants. Fast drop-off and easy direct billing with UAL Fleet!"</p>
-      <div style="font-weight:700; color:var(--navy); font-size:14px;">Sarah Reynolds</div>
+      <div style="color:#F59E0B; margin-bottom:10px; font-size:18px;">★★★★★</div>
+      <p style="font-size:14px; color:var(--ink); margin-bottom:16px;">"We needed two crossovers for visiting business associates at our Houston office. Fast pickup and easy corporate billing!"</p>
+      <div style="font-weight:800; color:var(--ink); font-size:14px;">Sarah Reynolds</div>
       <div style="font-size:12px; color:var(--muted);">Corporate Account • Energy Corridor</div>
     </div>
 
     <div class="review-card">
-      <div style="color:#F59E0B; margin-bottom:10px;">★★★★★</div>
-      <p style="font-size:14px; color:var(--ink); margin-bottom:16px;">"Best rental company in Houston. Mazhar took care of everything personally. Highly recommend for personal or family trips."</p>
-      <div style="font-weight:700; color:var(--navy); font-size:14px;">Ahmed Hassan</div>
+      <div style="color:#F59E0B; margin-bottom:10px; font-size:18px;">★★★★★</div>
+      <p style="font-size:14px; color:var(--ink); margin-bottom:16px;">"Great rental business in Houston! Mazhar handled our booking right away. Highly recommend for any daily commute or personal trip."</p>
+      <div style="font-weight:800; color:var(--ink); font-size:14px;">Ahmed Hassan</div>
       <div style="font-size:12px; color:var(--muted);">Daily Renter • Sugar Land TX</div>
     </div>
   </div>
@@ -589,12 +580,12 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="brand" style="margin-bottom:16px;">
+        <div class="brand" style="margin-bottom:16px; color:white;">
           <div class="brand-logo-icon">▲</div>
-          <div>UAL <span>FLEET</span></div>
+          <div>UAL <span style="color:var(--orange-bright);">FLEET</span></div>
         </div>
         <p style="font-size:13.5px; line-height:1.6; margin-bottom:20px;">
-          UAL Fleet LLC provides dependable, budget-friendly everyday sedans and small crossovers for Houston commuters, corporate fleets, and insurance claim guests.
+          UAL Fleet LLC provides dependable everyday sedans and small crossover SUVs for Houston commuters, corporate fleets, and insurance claim guests.
         </p>
         <div style="color:var(--white); font-weight:700;">Executive Contact: Mazhar Zahoor (CEO)</div>
       </div>
@@ -602,25 +593,25 @@
       <div>
         <h4>Fleet Categories</h4>
         <ul style="list-style:none;">
-          <li style="margin-bottom:8px;"><a href="#fleet" onclick="filterCategory('sedan')">Everyday Sedans</a></li>
-          <li style="margin-bottom:8px;"><a href="#fleet" onclick="filterCategory('suv')">Small SUVs & Crossovers</a></li>
+          <li style="margin-bottom:10px;"><a href="#fleet" onclick="filterCategory('sedan')">Everyday Sedans</a></li>
+          <li style="margin-bottom:10px;"><a href="#fleet" onclick="filterCategory('suv')">Small Crossovers & SUVs</a></li>
         </ul>
       </div>
 
       <div>
         <h4>Quick Links</h4>
         <ul style="list-style:none;">
-          <li style="margin-bottom:8px;"><a href="#home">Home</a></li>
-          <li style="margin-bottom:8px;"><a href="#categories">Categories</a></li>
-          <li style="margin-bottom:8px;"><a href="#fleet">Our Fleet</a></li>
-          <li style="margin-bottom:8px;"><a href="#how">How It Works</a></li>
+          <li style="margin-bottom:10px;"><a href="#home">Home</a></li>
+          <li style="margin-bottom:10px;"><a href="#categories">Categories</a></li>
+          <li style="margin-bottom:10px;"><a href="#fleet">Our Fleet</a></li>
+          <li style="margin-bottom:10px;"><a href="#how">How It Works</a></li>
         </ul>
       </div>
 
       <div>
-        <h4>Houston Yard Location</h4>
-        <p style="margin-bottom:8px;">📍 5719 Edward Dr, Houston TX 77032</p>
-        <p style="margin-bottom:8px;">📞 <a href="tel:+18328441156" style="color:white; font-weight:700;">(832) 844-1156</a></p>
+        <h4>Houston Location</h4>
+        <p style="margin-bottom:10px;">📍 5719 Edward Dr, Houston TX 77032</p>
+        <p style="margin-bottom:10px;">📞 <a href="tel:+18328441156" style="color:white; font-weight:800;">(832) 844-1156</a></p>
         <p>✉ info@ualfleet.com</p>
       </div>
     </div>
@@ -647,15 +638,15 @@
         <img id="modalCarImg" src="" style="width:120px; height:80px; object-fit:cover; border-radius:8px;" alt="Selected Car">
         <div>
           <div id="modalCarCategory" class="badge badge-orange">Sedan</div>
-          <h4 id="modalCarName" style="font-size:18px; color:var(--navy); font-weight:800;">Vehicle Name</h4>
+          <h4 id="modalCarName" style="font-size:18px; color:var(--ink); font-weight:800; margin-top:4px;">Vehicle Name</h4>
           <div style="font-size:13px; color:var(--muted);" id="modalCarRate">$68 / day</div>
         </div>
       </div>
 
       <form onsubmit="handleModalSubmit(event)">
         <div class="form-group" style="margin-bottom:12px;">
-          <label>Your Name *</label>
-          <input type="text" class="form-control" required placeholder="Full Name">
+          <label>Your Full Name *</label>
+          <input type="text" class="form-control" required placeholder="John Doe">
         </div>
         <div class="form-group" style="margin-bottom:12px;">
           <label>Phone Number *</label>
@@ -663,15 +654,16 @@
         </div>
         <div class="form-group" style="margin-bottom:16px;">
           <label>Days Needed</label>
-          <input type="number" min="1" max="90" value="1" class="form-control" id="modalDaysInput" onchange="updateModalPrice()">
+          <input type="number" min="1" max="90" value="1" class="form-control" id="modalDaysInput">
         </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;">Confirm Reservation Request</button>
+        <button type="submit" class="btn btn-orange" style="width:100%;">Confirm Reservation Request</button>
       </form>
     </div>
   </div>
 </div>
 
 <script>
+  // Everyday Normal Cars & Small Crossovers Database (Matching Specs & Real Names)
   const fleetData = [
     { id: 1, name: "Toyota Camry SE", category: "sedan", tag: "Midsize Sedan", badgeClass: "badge-blue", image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic", drive: "2.5L 4-Cyl / 32 MPG", luggage: "3 Bags", priceDay: 68, priceWeek: 410, rating: 4.9, year: 2024, dateAdded: "2024-06-10" },
     { id: 2, name: "Honda Civic Sport", category: "sedan", tag: "Compact Sedan", badgeClass: "badge-orange", image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic CVT", drive: "2.0L 4-Cyl / 35 MPG", luggage: "2 Bags", priceDay: 62, priceWeek: 370, rating: 4.8, year: 2023, dateAdded: "2023-10-15" },
@@ -721,7 +713,7 @@
 
           <div class="car-footer">
             <div class="car-price">Starting at<br><strong>$${car.priceDay}</strong> / day</div>
-            <button class="btn btn-navy" onclick="openBookingModal(${car.id})">Book Now</button>
+            <button class="btn btn-blue" onclick="openBookingModal(${car.id})">Book Now</button>
           </div>
         </div>
       `;
