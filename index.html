@@ -59,6 +59,7 @@
   .badge-orange { background: var(--orange-light); color: var(--orange); }
   .badge-navy { background: rgba(11, 30, 61, 0.08); color: var(--navy); }
   .badge-green { background: #E6F4EA; color: #137333; }
+  .badge-star { background: #FFFBEB; color: #D97706; border: 1px solid #FDE68A; }
 
   .btn {
     display: inline-flex;
@@ -286,7 +287,7 @@
   .f-content p { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
   .fleet-section { padding: 80px 0; }
-  .section-header { text-align: center; max-width: 680px; margin: 0 auto 40px; }
+  .section-header { text-align: center; max-width: 680px; margin: 0 auto 30px; }
   .section-tag {
     color: var(--orange);
     font-weight: 800;
@@ -299,21 +300,32 @@
   .section-title { font-size: 38px; color: var(--navy); font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
   .section-desc { font-size: 16px; color: var(--muted); }
 
+  /* Controls Bar */
+  .fleet-controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    padding: 16px 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
   .fleet-tabs {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 40px;
+    gap: 8px;
     flex-wrap: wrap;
   }
   .tab-btn {
-    padding: 10px 20px;
-    border-radius: 30px;
-    background: var(--white);
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: var(--paper);
     border: 1px solid var(--border);
     color: var(--navy);
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
     transition: all 0.25s ease;
   }
@@ -321,7 +333,19 @@
     background: var(--navy);
     color: var(--white);
     border-color: var(--navy);
-    box-shadow: 0 4px 12px rgba(11, 30, 61, 0.2);
+  }
+
+  .sort-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sort-group label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
 
   .fleet-grid {
@@ -358,6 +382,7 @@
   }
   .car-card:hover .car-card-image-wrap img { transform: scale(1.05); }
   .car-top-badge { position: absolute; top: 14px; left: 14px; z-index: 2; }
+  .car-rating-badge { position: absolute; top: 14px; right: 14px; z-index: 2; }
   .car-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
   .car-title-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
   .car-title { font-size: 19px; font-weight: 800; color: var(--navy); }
@@ -525,6 +550,8 @@
     .hero h1 { font-size: 38px; }
     .footer-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
+    .fleet-controls-bar { flex-direction: column; align-items: stretch; }
+    .sort-group { justify-content: space-between; }
     .mobile-menu-overlay {
       position: fixed; top: 0; left: 0; right: 0; bottom: 0;
       background: var(--navy); z-index: 150; padding: 30px;
@@ -544,7 +571,7 @@
       <span>⏰ Mon - Sat: 8:00 AM - 7:00 PM</span>
     </div>
     <div>
-      <span>✉️️ info@ualfleet.com</span>
+      <span>✉ info@ualfleet.com</span>
     </div>
   </div>
 </div>
@@ -599,7 +626,7 @@
         <span>★ HOUSTON'S TRUSTED FLEET PARTNER</span>
       </div>
       <h1>Drive Your Next <br><span class="highlight">Adventure.</span></h1>
-      <p>Reliable family SUVs, work trucks, and fuel-efficient sedans. Serving Houston individuals, corporate accounts, and insurance replacement rentals with speed and dependability.</p>
+      <p>Reliable family SUVs, 3-row vehicles, and compact crossovers. Serving Houston individuals, corporate accounts, and insurance replacement rentals with speed and dependability.</p>
       
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#fleet">Browse SUVs</a>
@@ -645,9 +672,11 @@
 
       <div class="form-group">
         <label>Category</label>
-        <select class="form-control" id="searchCategory" onchange="filterCategory(this.value)">
+        <select class="form-control" id="searchCategory" onchange="filterSubcategory(this.value)">
           <option value="all">All SUVs (8 Available)</option>
-          <option value="suv">SUVs & Crossovers</option>
+          <option value="fullsize">Full-Size & 3-Row SUVs</option>
+          <option value="midsize">Midsize SUVs</option>
+          <option value="compact">Compact Crossovers</option>
         </select>
       </div>
 
@@ -709,14 +738,29 @@
 <section class="fleet-section wrap" id="fleet">
   <div class="section-header">
     <span class="section-tag">PREMIUM SELECTION</span>
-    <h2 class="section-title">Explore Our Houston SUV Rental Fleet</h2>
-    <p class="section-desc">Select from practical family SUVs, full-size 3-row vehicles, and fuel-efficient crossovers.</p>
+    <h2 class="section-title">Explore Our Houston SUV Fleet</h2>
+    <p class="section-desc">Practical family SUVs, full-size 3-row vehicles, and fuel-efficient crossovers.</p>
   </div>
 
-  <!-- Fleet Category Tabs -->
-  <div class="fleet-tabs">
-    <button class="tab-btn active" onclick="filterCategory('all', this)">All SUVs (8)</button>
-    <button class="tab-btn" onclick="filterCategory('suv', this)">SUVs & Crossovers (8)</button>
+  <!-- Fleet Controls Bar (Sub-Categories & Sorting Options) -->
+  <div class="fleet-controls-bar">
+    <div class="fleet-tabs">
+      <button class="tab-btn active" onclick="filterSubcategory('all', this)">All SUVs (8)</button>
+      <button class="tab-btn" onclick="filterSubcategory('fullsize', this)">Full-Size & 3-Row</button>
+      <button class="tab-btn" onclick="filterSubcategory('midsize', this)">Midsize</button>
+      <button class="tab-btn" onclick="filterSubcategory('compact', this)">Compact Crossovers</button>
+    </div>
+
+    <div class="sort-group">
+      <label for="sortSelect">Sort By:</label>
+      <select class="form-control" id="sortSelect" style="width: auto; padding: 6px 12px; font-size: 13px;" onchange="applySort(this.value)">
+        <option value="newest">Newest First</option>
+        <option value="oldest">Oldest First</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="rating-desc">Rating: Highest First</option>
+      </select>
+    </div>
   </div>
 
   <!-- Dynamic Vehicle Grid -->
@@ -770,7 +814,7 @@
     <div class="reviews-grid">
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-quote">"Mazhar and the team at UAL Fleet saved my trip when my personal SUV broke down. Renting the Chevy Tahoe was seamless, incredibly clean, and priced way better than big airport brands."</p>
+        <p class="review-quote">"Mazhar and the team at UAL Fleet saved my trip when my personal SUV broke down. Renting the Chevrolet Tahoe LT was seamless, incredibly clean, and priced way better than big airport brands."</p>
         <div class="reviewer">
           <div class="reviewer-avatar">DM</div>
           <div class="reviewer-info">
@@ -782,7 +826,7 @@
 
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-quote">"We needed two GMC Yukons for a corporate team visiting our Houston headquarters. The vehicles were spotless, drove like new, and pickup was super smooth."</p>
+        <p class="review-quote">"We needed two GMC Yukon SLTs for a corporate team visiting our Houston headquarters. The vehicles were spotless, drove like new, and pickup was super smooth."</p>
         <div class="reviewer">
           <div class="reviewer-avatar">SR</div>
           <div class="reviewer-info">
@@ -870,13 +914,13 @@
           <div class="form-group">
             <label>Preferred Vehicle</label>
             <select class="form-control" id="formCarSelect">
-              <option value="Tahoe">Chevrolet Tahoe Premier</option>
-              <option value="Yukon">GMC Yukon XL</option>
+              <option value="Tahoe">Chevrolet Tahoe LT</option>
+              <option value="Yukon">GMC Yukon SLT</option>
               <option value="RAV4">Toyota RAV4 XLE</option>
               <option value="Explorer">Ford Explorer XLT</option>
               <option value="Grand Cherokee">Jeep Grand Cherokee Laredo</option>
-              <option value="Armada">Nissan Armada SL</option>
-              <option value="Trax">Chevrolet Trax LT</option>
+              <option value="Armada">Nissan Armada SV</option>
+              <option value="Equinox">Chevrolet Equinox LT</option>
               <option value="CRV">Honda CR-V EX</option>
               <option value="Other">Other (Specify in notes)</option>
             </select>
@@ -971,7 +1015,9 @@
       <div>
         <h4>Fleet Categories</h4>
         <ul class="footer-links">
-          <li><a href="#fleet" onclick="filterCategory('suv')">SUVs & Crossovers</a></li>
+          <li><a href="#fleet" onclick="filterSubcategory('fullsize')">Full-Size & 3-Row SUVs</a></li>
+          <li><a href="#fleet" onclick="filterSubcategory('midsize')">Midsize SUVs</a></li>
+          <li><a href="#fleet" onclick="filterSubcategory('compact')">Compact Crossovers</a></li>
         </ul>
       </div>
 
@@ -990,7 +1036,7 @@
         <h4>Houston Location</h4>
         <p style="color:#9CA3AF; margin-bottom:10px;">📍 5719 Edward Dr, Houston TX 77032</p>
         <p style="color:#9CA3AF; margin-bottom:10px;">📞 <a href="tel:+18328441156" style="color:white; font-weight:700;">(832) 844-1156</a></p>
-        <p style="color:#9CA3AF;">✉️️ info@ualfleet.com</p>
+        <p style="color:#9CA3AF;">✉ info@ualfleet.com</p>
       </div>
     </div>
 
@@ -1006,143 +1052,187 @@
 </footer>
 
 <script>
-  // Strictly Practical SUV Database (8 non-luxury, mainstream SUVs/Crossovers)
+  // Strictly Accurate Standard SUV Fleet Database
   const fleetData = [
     {
       id: 1,
-      name: "Chevrolet Tahoe Premier",
-      category: "suv",
-      tag: "Full-Size SUV",
+      name: "Chevrolet Tahoe LT",
+      subcategory: "fullsize",
+      tag: "3-Row Full-Size",
       badgeClass: "badge-orange",
       image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80",
-      seats: "7 Seats",
+      seats: "7-8 Seats",
       trans: "Automatic",
-      drive: "4x4 V8",
-      luggage: "4 Bags",
+      drive: "5.3L V8",
+      luggage: "4-6 Bags",
       priceDay: 120,
-      priceWeek: 750
+      priceWeek: 750,
+      rating: 4.9,
+      year: 2024,
+      dateAdded: "2024-08-15"
     },
     {
       id: 2,
-      name: "GMC Yukon XL",
-      category: "suv",
-      tag: "Large Family SUV",
+      name: "GMC Yukon SLT",
+      subcategory: "fullsize",
+      tag: "3-Row Full-Size",
       badgeClass: "badge-navy",
       image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80",
       seats: "8 Seats",
       trans: "Automatic",
-      drive: "4WD V8",
+      drive: "5.3L V8",
       luggage: "6 Bags",
       priceDay: 135,
-      priceWeek: 850
+      priceWeek: 850,
+      rating: 4.8,
+      year: 2024,
+      dateAdded: "2024-07-20"
     },
     {
       id: 3,
       name: "Toyota RAV4 XLE",
-      category: "suv",
-      tag: "Popular Crossover",
+      subcategory: "compact",
+      tag: "Compact Crossover",
       badgeClass: "badge-green",
       image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
       trans: "Automatic",
-      drive: "AWD / 30 MPG",
+      drive: "2.5L 4-Cyl",
       luggage: "3 Bags",
       priceDay: 80,
-      priceWeek: 480
+      priceWeek: 480,
+      rating: 4.9,
+      year: 2023,
+      dateAdded: "2023-11-10"
     },
     {
       id: 4,
       name: "Ford Explorer XLT",
-      category: "suv",
-      tag: "Family SUV",
+      subcategory: "fullsize",
+      tag: "3-Row SUV",
       badgeClass: "badge-green",
       image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=700&q=80",
       seats: "7 Seats",
       trans: "Automatic",
-      drive: "EcoBoost",
-      luggage: "3 Bags",
+      drive: "2.3L EcoBoost",
+      luggage: "3-4 Bags",
       priceDay: 90,
-      priceWeek: 550
+      priceWeek: 550,
+      rating: 4.7,
+      year: 2023,
+      dateAdded: "2023-09-05"
     },
     {
       id: 5,
       name: "Jeep Grand Cherokee Laredo",
-      category: "suv",
+      subcategory: "midsize",
       tag: "Midsize SUV",
       badgeClass: "badge-navy",
       image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
       trans: "Automatic",
-      drive: "4x4 System",
+      drive: "3.6L V6 4x4",
       luggage: "3 Bags",
       priceDay: 95,
-      priceWeek: 590
+      priceWeek: 590,
+      rating: 4.8,
+      year: 2022,
+      dateAdded: "2022-10-18"
     },
     {
       id: 6,
-      name: "Nissan Armada SL",
-      category: "suv",
-      tag: "Family Choice",
+      name: "Nissan Armada SV",
+      subcategory: "fullsize",
+      tag: "3-Row Full-Size",
       badgeClass: "badge-navy",
       image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=700&q=80",
       seats: "8 Seats",
       trans: "Automatic",
-      drive: "V8 Power",
-      luggage: "4 Bags",
+      drive: "5.6L V8",
+      luggage: "4-5 Bags",
       priceDay: 110,
-      priceWeek: 680
+      priceWeek: 680,
+      rating: 4.6,
+      year: 2023,
+      dateAdded: "2023-04-12"
     },
     {
       id: 7,
-      name: "Chevrolet Trax LT",
-      category: "suv",
+      name: "Chevrolet Equinox LT",
+      subcategory: "compact",
       tag: "Compact Crossover",
       badgeClass: "badge-green",
       image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
       trans: "Automatic",
-      drive: "FWD Fuel Efficient",
-      luggage: "2 Bags",
-      priceDay: 70,
-      priceWeek: 420
+      drive: "1.5L Turbo",
+      luggage: "2-3 Bags",
+      priceDay: 72,
+      priceWeek: 430,
+      rating: 4.6,
+      year: 2024,
+      dateAdded: "2024-01-22"
     },
     {
       id: 8,
       name: "Honda CR-V EX",
-      category: "suv",
-      tag: "Reliable Crossover",
+      subcategory: "compact",
+      tag: "Compact Crossover",
       badgeClass: "badge-green",
       image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=700&q=80",
       seats: "5 Seats",
       trans: "Automatic",
-      drive: "FWD / 32 MPG",
+      drive: "1.5L Turbo",
       luggage: "3 Bags",
       priceDay: 78,
-      priceWeek: 470
+      priceWeek: 470,
+      rating: 4.9,
+      year: 2023,
+      dateAdded: "2023-06-30"
     }
   ];
 
+  let currentSubcategory = 'all';
+  let currentSort = 'newest';
   let selectedCarForModal = null;
 
   // Render Dynamic Cars
-  function renderFleet(filter = 'all') {
+  function renderFleet() {
     const grid = document.getElementById('fleetGrid');
     grid.innerHTML = '';
 
-    const filtered = filter === 'all' ? fleetData : fleetData.filter(car => car.category === filter);
+    // Step 1: Filter by Subcategory
+    let list = currentSubcategory === 'all' 
+      ? [...fleetData] 
+      : fleetData.filter(car => car.subcategory === currentSubcategory);
 
-    filtered.forEach(car => {
+    // Step 2: Apply Sorting Order
+    if (currentSort === 'newest') {
+      list.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    } else if (currentSort === 'oldest') {
+      list.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+    } else if (currentSort === 'price-asc') {
+      list.sort((a, b) => a.priceDay - b.priceDay);
+    } else if (currentSort === 'price-desc') {
+      list.sort((a, b) => b.priceDay - a.priceDay);
+    } else if (currentSort === 'rating-desc') {
+      list.sort((a, b) => b.rating - a.rating);
+    }
+
+    // Step 3: Render Cards
+    list.forEach(car => {
       const card = document.createElement('div');
       card.className = 'car-card';
       card.innerHTML = `
         <div class="car-card-image-wrap">
           <span class="badge ${car.badgeClass} car-top-badge">${car.tag}</span>
+          <span class="badge badge-star car-rating-badge">★ ${car.rating}</span>
           <img src="${car.image}" alt="${car.name}" loading="lazy" onerror="this.src='https://placehold.co/600x400/0B1E3D/FFFFFF?text=${encodeURIComponent(car.name)}'">
         </div>
         <div class="car-body">
           <div class="car-title-row">
             <div>
-              <div class="car-category">${car.category.toUpperCase()}</div>
+              <div class="car-category">${car.year} • SUV</div>
               <h3 class="car-title">${car.name}</h3>
             </div>
           </div>
@@ -1169,13 +1259,20 @@
     });
   }
 
-  // Filter Category Handler
-  function filterCategory(cat, btn = null) {
+  // Subcategory Handler
+  function filterSubcategory(subcat, btn = null) {
+    currentSubcategory = subcat;
     if (btn) {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     }
-    renderFleet(cat);
+    renderFleet();
+  }
+
+  // Sort Handler
+  function applySort(sortValue) {
+    currentSort = sortValue;
+    renderFleet();
   }
 
   // Mobile Drawer Toggle
@@ -1199,7 +1296,7 @@
 
     document.getElementById('modalCarName').innerText = selectedCarForModal.name;
     document.getElementById('modalCarTitle').innerText = `Reserve ${selectedCarForModal.name}`;
-    document.getElementById('modalCarCategory').innerText = selectedCarForModal.category.toUpperCase();
+    document.getElementById('modalCarCategory').innerText = `★ ${selectedCarForModal.rating} | ${selectedCarForModal.year} SUV`;
     document.getElementById('modalCarRate').innerText = `$${selectedCarForModal.priceDay} / day ($${selectedCarForModal.priceWeek} / week)`;
     document.getElementById('modalCarImg').src = selectedCarForModal.image;
     document.getElementById('modalDaysInput').value = 1;
@@ -1240,7 +1337,7 @@
 
   // Initial Load
   window.onload = function() {
-    renderFleet('all');
+    renderFleet();
     
     // Set default dates to today & tomorrow
     const today = new Date().toISOString().split('T')[0];
