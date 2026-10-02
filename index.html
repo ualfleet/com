@@ -125,10 +125,10 @@
     /* Hero Section */
     .hero {
       background: linear-gradient(135deg, #FFFFFF 0%, #EBF3FF 100%);
-      padding: 70px 0 110px;
+      padding: 60px 0 90px;
       border-bottom: 1px solid var(--border);
     }
-    .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+    .hero-inner { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 32px; align-items: center; }
     .hero-tag {
       display: inline-block;
       background: var(--orange-light);
@@ -137,23 +137,40 @@
       border-radius: 30px;
       font-size: 12px;
       font-weight: 800;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
-    .hero h1 { font-size: 52px; line-height: 1.1; font-weight: 900; color: var(--ink); margin-bottom: 20px; }
+    .hero h1 { font-size: 48px; line-height: 1.1; font-weight: 900; color: var(--ink); margin-bottom: 16px; white-space: nowrap; }
     .hero h1 span { color: var(--primary-bright); }
-    .hero p { font-size: 18px; color: var(--muted); margin-bottom: 32px; max-width: 540px; }
+    .hero p { font-size: 16px; color: var(--muted); margin-bottom: 24px; max-width: 560px; white-space: nowrap; }
     
     .hero-stats {
       display: flex;
       gap: 36px;
-      padding-top: 24px;
+      padding-top: 20px;
       border-top: 1px solid var(--border);
+      white-space: nowrap;
     }
-    .stat-num { font-size: 28px; font-weight: 900; color: var(--ink); }
+    .stat-num { font-size: 26px; font-weight: 900; color: var(--ink); }
     .stat-num span { color: var(--orange-bright); }
-    .stat-lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; font-weight: 700; }
+    .stat-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; font-weight: 700; }
+
+    /* Hero Card Showcase Image Wrapper */
+    .hero-showcase-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      background: #0B1727;
+    }
+    .hero-showcase-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
     /* Search Bar Overlay */
     .search-wrapper { margin-top: -50px; position: relative; z-index: 10; padding: 0 24px; }
@@ -196,7 +213,7 @@
       box-shadow: var(--shadow-sm);
     }
     .cat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--primary-bright); }
-    .cat-card img { height: 100px; object-fit: contain; margin: 0 auto 16px; border-radius: 8px; }
+    .cat-card img { height: 100px; width: 100%; object-fit: contain; margin: 0 auto 16px; border-radius: 8px; }
     .cat-card h4 { font-size: 17px; color: var(--ink); font-weight: 800; }
     .cat-card p { font-size: 13px; color: var(--muted); margin-top: 4px; }
 
@@ -313,6 +330,9 @@
     .modal-box { background: var(--white); width: 100%; max-width: 580px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); }
     .modal-header { background: var(--primary-bright); color: var(--white); padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
 
+    @media(max-width: 1200px) {
+      .hero h1, .hero p { white-space: normal; }
+    }
     @media(max-width: 1024px) {
       .hero-inner { grid-template-columns: 1fr; text-align: center; }
       .category-grid, .fleet-grid { grid-template-columns: repeat(2, 1fr); }
@@ -323,7 +343,7 @@
       .category-grid, .fleet-grid, .steps-grid, .reviews-grid { grid-template-columns: 1fr; }
       .search-grid { grid-template-columns: 1fr; }
       .top-strip { display: none; }
-      .hero h1 { font-size: 38px; }
+      .hero h1 { font-size: 34px; }
     }
   </style>
 </head>
@@ -375,11 +395,11 @@
 <section class="hero" id="home">
   <div class="wrap hero-inner">
     <div>
-      <span class="hero-tag">★ HOUSTON'S DEPENDABLE AUTO RENTALS</span>
+      <span class="hero-tag">★ YOUR FLEET. OUR PRIORITY.</span>
       <h1>Drive Everyday Quality <span>For Less.</span></h1>
-      <p>Reliable everyday sedans and compact crossovers in Houston, TX. Perfect for daily commuters, business travel, and insurance replacement rentals.</p>
+      <p>Reliable everyday sedans and family SUVs in Houston, TX. Direct contact: CEO Mazhar Zahoor.</p>
       
-      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:32px;">
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:28px;">
         <a class="btn btn-orange" href="#fleet">View Available Cars</a>
         <a class="btn btn-outline" href="tel:+18328441156">Call (832) 844-1156</a>
       </div>
@@ -400,8 +420,8 @@
       </div>
     </div>
 
-    <div>
-      <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80" alt="Toyota Camry Houston Rental" style="border-radius:20px; box-shadow: var(--shadow-lg);">
+    <div class="hero-showcase-card">
+      <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80" alt="UAL Fleet Houston Cars">
     </div>
   </div>
 </section>
@@ -454,22 +474,22 @@
 
   <div class="category-grid">
     <div class="cat-card" onclick="filterCategory('sedan')">
-      <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=400&q=80" alt="Everyday Sedans">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/2018_Toyota_Camry_SE_2.5L_front_4.14.19.jpg" alt="Everyday Sedans">
       <h4>Everyday Sedans</h4>
       <p>Toyota Camry, Corolla & Civic</p>
     </div>
     <div class="cat-card" onclick="filterCategory('suv')">
-      <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=400&q=80" alt="Small SUVs">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg" alt="Small SUVs">
       <h4>Small SUVs & Crossovers</h4>
       <p>RAV4, CR-V, Rogue & CX-5</p>
     </div>
     <div class="cat-card" onclick="filterCategory('all')">
-      <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=400&q=80" alt="Insurance Replacement">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/2019_Toyota_Corolla_LE_1.8L_front_3.16.19.jpg" alt="Insurance Replacement">
       <h4>Insurance Replacements</h4>
       <p>Quick Claim Approvals</p>
     </div>
     <div class="cat-card" onclick="filterCategory('all')">
-      <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=400&q=80" alt="Corporate Rentals">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/2021_Hyundai_Elantra_SEL_Front.jpg" alt="Corporate Rentals">
       <h4>Corporate Accounts</h4>
       <p>Weekly & Monthly Discounts</p>
     </div>
@@ -663,7 +683,7 @@
 </div>
 
 <script>
-  // Correct Image Mappings Corresponding to Each Specific Vehicle Model
+  // Verified Wikipedia Image Links matching the exact Car Names
   const fleetData = [
     { 
       id: 1, 
@@ -671,7 +691,7 @@
       category: "sedan", 
       tag: "Midsize Sedan", 
       badgeClass: "badge-blue", 
-      image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=700&q=80", 
+      image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/2018_Toyota_Camry_SE_2.5L_front_4.14.19.jpg", 
       seats: "5 Seats", 
       trans: "Automatic", 
       drive: "2.5L 4-Cyl / 32 MPG", 
@@ -684,11 +704,11 @@
     },
     { 
       id: 2, 
-      name: "Audi R6", 
+      name: "Honda Civic Sport", 
       category: "sedan", 
       tag: "Compact Sedan", 
       badgeClass: "badge-orange", 
-      image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=700&q=80", 
+      image: "https://upload.wikimedia.org/wikipedia/commons/2/23/2022_Honda_Civic_Sport_Sedan%2C_front_right%2C_10-12-2022.jpg", 
       seats: "5 Seats", 
       trans: "Automatic CVT", 
       drive: "2.0L 4-Cyl / 35 MPG", 
@@ -701,11 +721,11 @@
     },
     { 
       id: 3, 
-      name: "Mercedes-Benz C-Class", 
+      name: "Toyota Corolla LE", 
       category: "sedan", 
       tag: "Economy Sedan", 
       badgeClass: "badge-blue", 
-      image: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=700&q=80", 
+      image: "https://upload.wikimedia.org/wikipedia/commons/e/e1/2019_Toyota_Corolla_LE_1.8L_front_3.16.19.jpg", 
       seats: "5 Seats", 
       trans: "Automatic CVT", 
       drive: "2.0L 4-Cyl / 38 MPG", 
@@ -718,11 +738,11 @@
     },
     { 
       id: 4, 
-      name: "Toyota Corolla LE", 
+      name: "Hyundai Elantra SEL", 
       category: "sedan", 
       tag: "Commuter Sedan", 
       badgeClass: "badge-orange", 
-      image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=700&q=80", 
+      image: "https://upload.wikimedia.org/wikipedia/commons/2/23/2021_Hyundai_Elantra_SEL_Front.jpg", 
       seats: "5 Seats", 
       trans: "Automatic", 
       drive: "2.0L 4-Cyl / 36 MPG", 
@@ -735,11 +755,11 @@
     },
     { 
       id: 5, 
-      name: "Nissan Rogue SV", 
+      name: "Toyota RAV4 XLE", 
       category: "suv", 
       tag: "Compact SUV", 
       badgeClass: "badge-orange", 
-      image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80", 
+      image: "https://upload.wikimedia.org/wikipedia/commons/1/18/2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg", 
       seats: "5 Seats", 
       trans: "Automatic", 
       drive: "2.5L 4-Cyl / 30 MPG", 
@@ -752,12 +772,12 @@
     },
     { 
       id: 6, 
-      name: "Ford Expedition", 
+      name: "Honda CR-V EX", 
       category: "suv", 
       tag: "Compact SUV", 
       badgeClass: "badge-blue", 
-      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80", 
-      seats: "7 Seats", 
+      image: "https://upload.wikimedia.org/wikipedia/commons/8/87/2023_Honda_CR-V_EX-L_%28United_States%29_front_view_01.jpg", 
+      seats: "5 Seats", 
       trans: "Automatic CVT", 
       drive: "1.5L Turbo / 31 MPG", 
       luggage: "3-4 Bags", 
@@ -769,11 +789,11 @@
     },
     { 
       id: 7, 
-      name: "Porsche", 
+      name: "Nissan Rogue SV", 
       category: "suv", 
       tag: "Small Crossover", 
       badgeClass: "badge-orange", 
-      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80", 
+      image: "https://upload.wikimedia.org/wikipedia/commons/2/29/2021_Nissan_Rogue_SV_AWD%2C_front_12.20.20.jpg", 
       seats: "5 Seats", 
       trans: "Automatic", 
       drive: "1.5L Turbo / 33 MPG", 
@@ -786,11 +806,11 @@
     },
     { 
       id: 8, 
-      name: "Volkswagen", 
+      name: "Mazda CX-5 Select", 
       category: "suv", 
       tag: "Compact Crossover", 
       badgeClass: "badge-blue", 
-      image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=700&q=80", 
+      image: "https://upload.wikimedia.org/wikipedia/commons/8/85/2018_Mazda_CX-5_SE_Automatic_2.0_Front.jpg", 
       seats: "5 Seats", 
       trans: "6-Speed Auto", 
       drive: "2.5L AWD / 28 MPG", 
