@@ -12,6 +12,7 @@
     :root {
       --primary-bright: #2563EB;
       --primary-dark: #1E40AF;
+      --navy-dark: #0A192F;
       --orange-bright: #FF6B00;
       --orange-hover: #E05D00;
       --orange-light: rgba(255, 107, 0, 0.1);
@@ -97,18 +98,78 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       border-bottom: 1px solid var(--border);
     }
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1240px; margin: 0 auto; }
-    .brand { display: flex; align-items: center; gap: 12px; font-family: 'Poppins'; font-weight: 900; font-size: 24px; color: var(--ink); }
-    .brand-logo-icon {
-      width: 42px; height: 42px;
-      background: linear-gradient(135deg, var(--primary-bright) 0%, var(--primary-dark) 100%);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--white); font-weight: 900; font-size: 22px;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; max-width: 1240px; margin: 0 auto; }
+    
+    /* Updated Brand Logo Styling */
+    .brand-logo-container {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
-    .brand-text span { color: var(--orange-bright); }
-    .brand-sub { display: block; font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: 0.15em; margin-top: -4px; }
+    .brand-logo-svg {
+      height: 52px;
+      width: auto;
+    }
+    .brand-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 26px;
+      line-height: 0.9;
+      color: #0A192F;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+    }
+    .brand-title .custom-a {
+      display: inline-block;
+      position: relative;
+      color: #0A192F;
+      margin: 0 1px;
+    }
+    .brand-title .custom-a::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 10px solid #FF6B00;
+    }
+    .brand-sub-orange {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      color: #FF6B00;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .brand-sub-tag {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      color: #0A192F;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 1px;
+    }
+    .brand-sub-tag::before, .brand-sub-tag::after {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 2px;
+      background: #FF6B00;
+    }
 
     .navlinks { display: flex; gap: 32px; font-weight: 600; font-size: 15px; color: var(--ink); }
     .navlinks a:hover { color: var(--primary-bright); }
@@ -345,11 +406,38 @@
 <!-- Navigation Header -->
 <header>
   <nav>
-    <a href="#" class="brand">
-      <div class="brand-logo-icon">▲</div>
-      <div>
-        UAL <span>FLEET</span>
-        <span class="brand-sub">AUTO RENTALS LLC</span>
+    <a href="#" class="brand-logo-container">
+      <!-- SVG Emblem from Image 1 -->
+      <svg class="brand-logo-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF7B00" />
+            <stop offset="100%" stop-color="#FF5000" />
+          </linearGradient>
+        </defs>
+        <!-- Dynamic Orange Swoosh Rings -->
+        <path d="M 25 105 C 10 70 30 25 90 20 C 150 15 210 35 220 70 C 225 85 220 95 210 100 C 195 105 180 85 170 70 C 150 45 100 35 60 50 C 35 60 25 80 32 100 C 35 108 28 110 25 105 Z" fill="url(#orangeGrad)"/>
+        <!-- Navy Road Base with Dashed Markings -->
+        <path d="M 15 135 C 50 160 170 155 230 115 C 225 105 210 100 200 105 C 150 135 60 135 25 120 Z" fill="#0A192F"/>
+        <path d="M 45 134 L 75 138 L 70 142 L 40 138 Z" fill="#FFFFFF"/>
+        <path d="M 95 141 L 130 143 L 125 147 L 90 144 Z" fill="#FFFFFF"/>
+        <path d="M 150 143 L 185 141 L 180 144 L 145 146 Z" fill="#FFFFFF"/>
+        <!-- Modern Car Silhouette -->
+        <path d="M 35 112 C 40 90 60 75 90 68 C 120 62 160 62 190 75 C 210 84 220 95 222 106 C 205 110 180 112 150 112 C 100 112 55 115 35 112 Z" fill="#0A192F"/>
+        <!-- Car Windows / Highlights -->
+        <path d="M 85 73 C 110 68 145 68 170 77 C 160 88 130 92 95 92 C 85 88 80 80 85 73 Z" fill="#FFFFFF"/>
+        <!-- Headlight Swoosh -->
+        <path d="M 185 88 C 200 88 212 94 215 99 C 205 100 195 97 185 93 Z" fill="url(#orangeGrad)"/>
+        <!-- Bottom Orange Swoosh Accent -->
+        <path d="M 50 148 C 100 165 180 155 220 125 C 210 123 190 135 145 146 C 95 152 60 148 50 148 Z" fill="url(#orangeGrad)"/>
+      </svg>
+      
+      <div class="brand-text-wrap">
+        <div class="brand-title">
+          U<span class="custom-a">&nbsp;</span>L
+        </div>
+        <div class="brand-sub-orange">FLEET LLC</div>
+        <div class="brand-sub-tag">Auto Rentals</div>
       </div>
     </a>
 
@@ -580,9 +668,25 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="brand" style="margin-bottom:16px; color:white;">
-          <div class="brand-logo-icon">▲</div>
-          <div>UAL <span style="color:var(--orange-bright);">FLEET</span></div>
+        <div class="brand-logo-container" style="margin-bottom:16px;">
+          <svg class="brand-logo-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" style="height:44px;">
+            <defs>
+              <linearGradient id="orangeGradFoot" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FF7B00" />
+                <stop offset="100%" stop-color="#FF5000" />
+              </linearGradient>
+            </defs>
+            <path d="M 25 105 C 10 70 30 25 90 20 C 150 15 210 35 220 70 C 225 85 220 95 210 100 C 195 105 180 85 170 70 C 150 45 100 35 60 50 C 35 60 25 80 32 100 C 35 108 28 110 25 105 Z" fill="url(#orangeGradFoot)"/>
+            <path d="M 15 135 C 50 160 170 155 230 115 C 225 105 210 100 200 105 C 150 135 60 135 25 120 Z" fill="#FFFFFF"/>
+            <path d="M 35 112 C 40 90 60 75 90 68 C 120 62 160 62 190 75 C 210 84 220 95 222 106 C 205 110 180 112 150 112 C 100 112 55 115 35 112 Z" fill="#FFFFFF"/>
+            <path d="M 50 148 C 100 165 180 155 220 125 C 210 123 190 135 145 146 C 95 152 60 148 50 148 Z" fill="url(#orangeGradFoot)"/>
+          </svg>
+          <div class="brand-text-wrap">
+            <div class="brand-title" style="color:#FFFFFF;">
+              U<span class="custom-a" style="color:#FFFFFF;">&nbsp;</span>L
+            </div>
+            <div class="brand-sub-orange">FLEET LLC</div>
+          </div>
         </div>
         <p style="font-size:13.5px; line-height:1.6; margin-bottom:20px;">
           UAL Fleet LLC provides dependable everyday sedans and small crossover SUVs for Houston commuters, corporate fleets, and insurance claim guests.
@@ -663,7 +767,6 @@
 </div>
 
 <script>
-  // Correct Image Mappings Corresponding to Each Specific Vehicle Model
   const fleetData = [
     { 
       id: 1, 
