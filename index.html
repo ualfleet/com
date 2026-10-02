@@ -2,568 +2,343 @@
 <html lang="en">
 <head>
   <meta name="google-site-verification" content="d4lFxLcx9FaBRfG7CaEUGJYfUnT-iLdQlHZnEsdBFO8" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>UAL Fleet LLC | Auto Rentals — Houston, TX</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #0B1E3D;
-    --navy-2: #132A52;
-    --navy-dark: #061126;
-    --orange: #F6871F;
-    --orange-hover: #E0730F;
-    --orange-light: rgba(246, 135, 31, 0.12);
-    --paper: #F4F6F9;
-    --white: #FFFFFF;
-    --ink: #111827;
-    --muted: #6B7280;
-    --border: #E5E7EB;
-    --card-shadow: 0 10px 30px -5px rgba(11, 30, 61, 0.08);
-    --card-hover-shadow: 0 20px 35px -5px rgba(11, 30, 61, 0.18);
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-  body {
-    font-family: 'Inter', sans-serif;
-    color: var(--ink);
-    background: var(--paper);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-  
-  h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
-  a { color: inherit; text-decoration: none; transition: all 0.25s ease; }
-  img { max-width: 100%; height: auto; display: block; }
-  button, input, select, textarea { font-family: inherit; }
-
-  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-  
-  /* Badges & Buttons */
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .badge-orange { background: var(--orange-light); color: var(--orange); }
-  .badge-navy { background: rgba(11, 30, 61, 0.08); color: var(--navy); }
-  .badge-green { background: #E6F4EA; color: #137333; }
-  .badge-star { background: #FFFBEB; color: #D97706; border: 1px solid #FDE68A; }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-    border: none;
-    transition: all 0.25s ease;
-    text-align: center;
-  }
-  .btn-primary { background: var(--orange); color: var(--white); box-shadow: 0 4px 14px rgba(246, 135, 31, 0.35); }
-  .btn-primary:hover { background: var(--orange-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(246, 135, 31, 0.45); }
-  .btn-navy { background: var(--navy); color: var(--white); }
-  .btn-navy:hover { background: var(--navy-2); transform: translateY(-2px); }
-  .btn-outline { border: 1.5px solid var(--border); color: var(--navy); background: transparent; }
-  .btn-outline:hover { border-color: var(--orange); color: var(--orange); background: var(--orange-light); }
-  .btn-ghost-white { border: 1.5px solid rgba(255,255,255,0.3); color: var(--white); background: rgba(255,255,255,0.05); }
-  .btn-ghost-white:hover { border-color: var(--orange); background: var(--orange); color: var(--white); }
-
-  header {
-    position: sticky;
-    top: env(safe-area-inset-top, 0px);
-    z-index: 100;
-    background: rgba(11, 30, 61, 0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .top-strip {
-    background: var(--navy-dark);
-    color: rgba(255,255,255,0.7);
-    font-size: 12px;
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-  .top-strip .wrap { display: flex; justify-content: space-between; align-items: center; }
-  .top-info { display: flex; gap: 20px; }
-  .top-info span { display: flex; align-items: center; gap: 6px; }
-
-  nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1240px; margin: 0 auto; }
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Poppins';
-    font-weight: 900;
-    font-size: 22px;
-    color: var(--white);
-    letter-spacing: -0.02em;
-  }
-  .brand-logo-icon {
-    width: 38px;
-    height: 38px;
-    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-hover) 100%);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-weight: 900;
-    font-size: 20px;
-    box-shadow: 0 4px 10px rgba(246, 135, 31, 0.4);
-  }
-  .brand-text span { color: var(--orange); }
-  .brand-sub { display: block; font-size: 9px; font-weight: 600; color: #9CA3AF; letter-spacing: 0.15em; margin-top: -3px; }
-
-  .navlinks { display: flex; gap: 28px; font-weight: 500; font-size: 14px; color: #D1D5DB; }
-  .navlinks a { position: relative; padding: 4px 0; }
-  .navlinks a::after {
-    content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
-    background: var(--orange); transition: width 0.25s ease;
-  }
-  .navlinks a:hover { color: var(--white); }
-  .navlinks a:hover::after { width: 100%; }
-
-  .nav-actions { display: flex; align-items: center; gap: 18px; }
-  .nav-phone {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--white);
-    font-weight: 700;
-    font-size: 14px;
-    background: rgba(255,255,255,0.08);
-    padding: 8px 14px;
-    border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.12);
-  }
-  .nav-phone:hover { border-color: var(--orange); color: var(--orange); }
-
-  .mobile-toggle { display: none; background: none; border: none; color: var(--white); font-size: 24px; cursor: pointer; }
-
-  .hero {
-    position: relative;
-    background: linear-gradient(135deg, #061126 0%, #0B1E3D 50%, #132A52 100%);
-    color: var(--white);
-    padding: 90px 0 140px;
-    overflow: hidden;
-  }
-  .hero-bg-overlay {
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background-image: radial-gradient(rgba(246, 135, 31, 0.15) 1px, transparent 1px);
-    background-size: 32px 32px;
-    opacity: 0.4;
-  }
-  .hero-glow {
-    position: absolute;
-    top: 20%; right: -5%; width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(246,135,31,0.22) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(246, 135, 31, 0.15);
-    border: 1px solid rgba(246, 135, 31, 0.3);
-    color: var(--orange-hover);
-    padding: 6px 14px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-  .hero h1 { font-size: 54px; line-height: 1.08; font-weight: 900; margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-  .hero h1 span.highlight {
-    background: linear-gradient(120deg, #F6871F 0%, #FFA94D 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .hero p { font-size: 18px; color: #9CA3AF; margin-bottom: 32px; max-width: 540px; line-height: 1.6; }
-  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 36px; }
-
-  .hero-stats {
-    display: flex;
-    gap: 32px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.12);
-  }
-  .stat-num { font-size: 26px; font-weight: 800; color: var(--white); font-family: 'Poppins'; }
-  .stat-num span { color: var(--orange); }
-  .stat-lbl { font-size: 12px; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.05em; }
-
-  .hero-car-showcase {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .hero-car-img {
-    width: 100%;
-    max-width: 580px;
-    filter: drop-shadow(0 25px 35px rgba(0,0,0,0.6));
-    animation: floatCar 6s ease-in-out infinite;
-  }
-  @keyframes floatCar {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-  }
-
-  /* Interactive Booking Search Bar */
-  .search-wrapper { margin-top: -65px; position: relative; z-index: 10; padding: 0 24px; }
-  .search-card {
-    background: var(--white);
-    border-radius: 16px;
-    padding: 28px;
-    box-shadow: var(--card-hover-shadow);
-    border: 1px solid var(--border);
-  }
-  .search-card-title {
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--navy);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .search-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr auto; gap: 16px; align-items: end; }
-  .form-group { display: flex; flex-direction: column; gap: 6px; }
-  .form-group label { font-size: 12px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.03em; }
-  .form-control {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1.5px solid var(--border);
-    border-radius: 8px;
-    font-size: 14px;
-    color: var(--ink);
-    background: var(--paper);
-    outline: none;
-    transition: all 0.2s ease;
-  }
-  .form-control:focus { border-color: var(--orange); background: var(--white); box-shadow: 0 0 0 3px rgba(246, 135, 31, 0.15); }
-
-  .features-strip { padding: 60px 0 20px; background: var(--paper); }
-  .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .f-card {
-    background: var(--white);
-    padding: 24px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-  }
-  .f-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow); border-color: var(--orange-light); }
-  .f-icon {
-    width: 48px; height: 48px;
-    border-radius: 10px;
-    background: var(--orange-light);
-    color: var(--orange);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px; flex-shrink: 0;
-  }
-  .f-content h4 { font-size: 16px; color: var(--navy); margin-bottom: 4px; font-weight: 700; }
-  .f-content p { font-size: 13px; color: var(--muted); line-height: 1.5; }
-
-  .fleet-section { padding: 80px 0; }
-  .section-header { text-align: center; max-width: 680px; margin: 0 auto 30px; }
-  .section-tag {
-    color: var(--orange);
-    font-weight: 800;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
-    display: block;
-  }
-  .section-title { font-size: 38px; color: var(--navy); font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
-  .section-desc { font-size: 16px; color: var(--muted); }
-
-  /* Controls Bar */
-  .fleet-controls-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--white);
-    padding: 16px 24px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    margin-bottom: 32px;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .fleet-tabs {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .tab-btn {
-    padding: 8px 16px;
-    border-radius: 20px;
-    background: var(--paper);
-    border: 1px solid var(--border);
-    color: var(--navy);
-    font-weight: 600;
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-  }
-  .tab-btn.active, .tab-btn:hover {
-    background: var(--navy);
-    color: var(--white);
-    border-color: var(--navy);
-  }
-
-  .sort-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .sort-group label {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--navy);
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-  }
-
-  .fleet-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-  .car-card {
-    background: var(--white);
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    transition: all 0.35s ease;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-  .car-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--card-hover-shadow);
-    border-color: rgba(246, 135, 31, 0.4);
-  }
-  .car-card-image-wrap {
-    position: relative;
-    height: 210px;
-    background: #0f2242;
-    overflow: hidden;
-  }
-  .car-card-image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  .car-card:hover .car-card-image-wrap img { transform: scale(1.05); }
-  .car-top-badge { position: absolute; top: 14px; left: 14px; z-index: 2; }
-  .car-rating-badge { position: absolute; top: 14px; right: 14px; z-index: 2; }
-  .car-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
-  .car-title-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-  .car-title { font-size: 19px; font-weight: 800; color: var(--navy); }
-  .car-category { font-size: 12px; font-weight: 600; color: var(--orange); text-transform: uppercase; }
-
-  .car-specs-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    background: var(--paper);
-    padding: 12px;
-    border-radius: 8px;
-    margin: 16px 0;
-    font-size: 12.5px;
-    color: var(--ink);
-  }
-  .spec-item { display: flex; align-items: center; gap: 6px; font-weight: 500; }
-  .spec-item i { color: var(--orange); font-style: normal; }
-
-  .car-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-  }
-  .car-price { font-size: 12px; color: var(--muted); }
-  .car-price strong { font-size: 22px; color: var(--navy); font-weight: 800; font-family: 'Poppins'; }
-
-  .business-section {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
-    color: var(--white);
-    padding: 80px 0;
-    position: relative;
-  }
-  .biz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-  .biz-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
-    padding: 32px;
-    backdrop-filter: blur(10px);
-  }
-  .biz-card h3 { font-size: 24px; font-weight: 800; margin-bottom: 12px; color: var(--white); }
-  .biz-card p { color: #C9D3E4; font-size: 15px; margin-bottom: 20px; line-height: 1.6; }
-  .biz-list { list-style: none; margin-bottom: 24px; }
-  .biz-list li { display: flex; align-items: center; gap: 10px; font-size: 14px; margin-bottom: 10px; color: #E5E7EB; }
-  .biz-list li::before { content: "✓"; color: var(--orange); font-weight: 900; }
-
-  .reviews-section { padding: 80px 0; background: var(--white); }
-  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .review-card {
-    background: var(--paper);
-    padding: 28px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-  }
-  .review-stars { color: #F59E0B; font-size: 16px; margin-bottom: 12px; }
-  .review-quote { font-size: 14.5px; color: var(--ink); font-style: italic; margin-bottom: 18px; line-height: 1.6; }
-  .reviewer { display: flex; align-items: center; gap: 12px; }
-  .reviewer-avatar {
-    width: 42px; height: 42px; border-radius: 50%;
-    background: var(--navy); color: var(--white);
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 14px;
-  }
-  .reviewer-info h5 { font-size: 14px; color: var(--navy); font-weight: 700; }
-  .reviewer-info span { font-size: 12px; color: var(--muted); }
-
-  .contact-section { padding: 80px 0; background: var(--paper); }
-  .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; }
-  .contact-info-card {
-    background: var(--navy);
-    color: var(--white);
-    border-radius: 16px;
-    padding: 40px;
-    position: relative;
-    overflow: hidden;
-  }
-  .contact-info-card::after {
-    content: ''; position: absolute; bottom: -50px; right: -50px;
-    width: 200px; height: 200px; background: var(--orange); opacity: 0.15; border-radius: 50%;
-  }
-  .c-detail { display: flex; gap: 16px; margin-bottom: 24px; }
-  .c-icon {
-    width: 44px; height: 44px; border-radius: 8px; background: rgba(246, 135, 31, 0.2);
-    color: var(--orange); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
-  }
-  .c-text label { display: block; font-size: 11px; text-transform: uppercase; color: var(--orange-hover); font-weight: 700; }
-  .c-text span, .c-text a { font-size: 15px; color: var(--white); font-weight: 600; }
-
-  .booking-form-card {
-    background: var(--white);
-    border-radius: 16px;
-    padding: 40px;
-    border: 1px solid var(--border);
-    box-shadow: var(--card-shadow);
-  }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-
-  .modal-overlay {
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(6, 17, 38, 0.8); backdrop-filter: blur(6px);
-    z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px;
-  }
-  .modal-overlay.active { display: flex; }
-  .modal-box {
-    background: var(--white);
-    width: 100%; max-width: 620px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-    animation: modalSlide 0.3s ease;
-  }
-  @keyframes modalSlide {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .modal-header {
-    background: var(--navy); color: var(--white);
-    padding: 20px 28px; display: flex; justify-content: space-between; align-items: center;
-  }
-  .modal-header h3 { font-size: 20px; font-weight: 700; }
-  .modal-close { background: none; border: none; color: var(--white); font-size: 24px; cursor: pointer; }
-  .modal-body { padding: 28px; max-height: 80vh; overflow-y: auto; }
-  .price-calc-box {
-    background: var(--paper); border: 1px solid var(--border); border-radius: 10px;
-    padding: 16px; margin: 16px 0 24px; display: flex; justify-content: space-between; align-items: center;
-  }
-
-  footer { background: var(--navy-dark); color: #9CA3AF; padding: 70px 0 30px; font-size: 14px; }
-  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; margin-bottom: 50px; }
-  .footer-col h4 { color: var(--white); font-size: 16px; font-weight: 700; margin-bottom: 20px; }
-  .footer-links { list-style: none; }
-  .footer-links li { margin-bottom: 10px; }
-  .footer-links a:hover { color: var(--orange); }
-  .footer-bottom {
-    padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 13px;
-  }
-
-  /* Responsive Design Overrides */
-  @media(max-width: 1024px) {
-    .hero-inner { grid-template-columns: 1fr; text-align: center; }
-    .hero p { margin: 0 auto 32px; }
-    .hero-ctas { justify-content: center; }
-    .hero-stats { justify-content: center; }
-    .hero-car-showcase { margin-top: 20px; }
-    .search-grid { grid-template-columns: 1fr 1fr; }
-    .features-grid { grid-template-columns: repeat(2, 1fr); }
-    .fleet-grid { grid-template-columns: repeat(2, 1fr); }
-    .biz-grid { grid-template-columns: 1fr; }
-    .reviews-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media(max-width: 768px) {
-    .top-strip { display: none; }
-    .navlinks, .nav-phone { display: none; }
-    .mobile-toggle { display: block; }
-    .search-grid { grid-template-columns: 1fr; }
-    .features-grid { grid-template-columns: 1fr; }
-    .fleet-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 38px; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
-    .fleet-controls-bar { flex-direction: column; align-items: stretch; }
-    .sort-group { justify-content: space-between; }
-    .mobile-menu-overlay {
-      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-      background: var(--navy); z-index: 150; padding: 30px;
-      display: none; flex-direction: column; justify-content: center; gap: 20px; text-align: center;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>UAL Fleet LLC | Auto Rentals — Houston, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1E3D;
+      --navy-2: #132A52;
+      --navy-dark: #061126;
+      --blue-accent: #2563EB;
+      --orange: #F6871F;
+      --orange-hover: #E0730F;
+      --paper: #F8FAFC;
+      --white: #FFFFFF;
+      --ink: #0F172A;
+      --muted: #64748B;
+      --border: #E2E8F0;
+      --card-shadow: 0 10px 25px -5px rgba(11, 30, 61, 0.06);
+      --card-hover-shadow: 0 20px 30px -5px rgba(11, 30, 61, 0.15);
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
     }
-    .mobile-menu-overlay.active { display: flex; }
-    .mobile-menu-overlay a { font-size: 20px; font-weight: 700; color: var(--white); }
-  }
-</style>
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
+    a { color: inherit; text-decoration: none; transition: all 0.25s ease; }
+    img { max-width: 100%; height: auto; display: block; }
+    button, input, select, textarea { font-family: inherit; }
+
+    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-orange { background: rgba(246, 135, 31, 0.12); color: var(--orange); }
+    .badge-blue { background: rgba(37, 99, 235, 0.1); color: var(--blue-accent); }
+    .badge-star { background: #FFFBEB; color: #D97706; border: 1px solid #FDE68A; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s ease;
+      text-align: center;
+    }
+    .btn-primary { background: var(--orange); color: var(--white); box-shadow: 0 4px 14px rgba(246, 135, 31, 0.35); }
+    .btn-primary:hover { background: var(--orange-hover); transform: translateY(-2px); }
+    .btn-navy { background: var(--navy); color: var(--white); }
+    .btn-navy:hover { background: var(--navy-2); transform: translateY(-2px); }
+    .btn-blue { background: var(--blue-accent); color: var(--white); }
+    .btn-blue:hover { background: #1D4ED8; transform: translateY(-2px); }
+
+    /* Top Strip Header */
+    .top-strip {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.7);
+      font-size: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .top-strip .wrap { display: flex; justify-content: space-between; align-items: center; }
+    .top-info { display: flex; gap: 24px; }
+    .top-info span { display: flex; align-items: center; gap: 6px; }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      z-index: 100;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1240px; margin: 0 auto; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Poppins';
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--white);
+    }
+    .brand-logo-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--orange);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 900;
+      font-size: 20px;
+    }
+    .brand-text span { color: var(--orange); }
+    .brand-sub { display: block; font-size: 9px; font-weight: 600; color: #9CA3AF; letter-spacing: 0.15em; margin-top: -3px; }
+
+    .navlinks { display: flex; gap: 28px; font-weight: 500; font-size: 14px; color: #D1D5DB; }
+    .navlinks a:hover { color: var(--white); }
+
+    .nav-actions { display: flex; align-items: center; gap: 16px; }
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 14px;
+      background: rgba(255,255,255,0.08);
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #061126 0%, #0B1E3D 50%, #132A52 100%);
+      color: var(--white);
+      padding: 80px 0 120px;
+      position: relative;
+    }
+    .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.2);
+      color: #60A5FA;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .hero h1 { font-size: 50px; line-height: 1.1; font-weight: 900; margin-bottom: 20px; }
+    .hero p { font-size: 17px; color: #94A3B8; margin-bottom: 32px; max-width: 520px; }
+    
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-num { font-size: 26px; font-weight: 800; color: var(--white); }
+    .stat-num span { color: var(--orange); }
+    .stat-lbl { font-size: 12px; color: #94A3B8; text-transform: uppercase; }
+
+    /* Search Bar Overlay */
+    .search-wrapper { margin-top: -60px; position: relative; z-index: 10; padding: 0 24px; }
+    .search-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px 32px;
+      box-shadow: var(--card-hover-shadow);
+      border: 1px solid var(--border);
+    }
+    .search-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr auto; gap: 16px; align-items: end; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 11px; font-weight: 700; color: var(--navy); text-transform: uppercase; }
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    /* Category Showcase */
+    .section-block { padding: 80px 0; }
+    .section-title-wrap { text-align: center; margin-bottom: 48px; }
+    .section-tag { color: var(--orange); font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 8px; }
+    .section-title { font-size: 36px; color: var(--navy); font-weight: 800; }
+
+    .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .cat-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .cat-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow); border-color: var(--orange); }
+    .cat-card img { height: 90px; object-fit: contain; margin: 0 auto 12px; }
+    .cat-card h4 { font-size: 16px; color: var(--navy); font-weight: 700; }
+    .cat-card p { font-size: 13px; color: var(--muted); }
+
+    /* Fleet Section & Controls */
+    .fleet-controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--white);
+      padding: 16px 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .fleet-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tab-btn {
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .tab-btn.active, .tab-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+    .fleet-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .car-card {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .car-card:hover { transform: translateY(-6px); box-shadow: var(--card-hover-shadow); }
+    .car-card-img { height: 180px; background: #F1F5F9; position: relative; overflow: hidden; }
+    .car-card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .car-top-badge { position: absolute; top: 12px; left: 12px; }
+    .car-rating-badge { position: absolute; top: 12px; right: 12px; }
+    .car-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .car-title { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .car-sub { font-size: 12px; color: var(--orange); font-weight: 600; text-transform: uppercase; margin-bottom: 12px; }
+    
+    .car-specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      background: var(--paper);
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 12px;
+      color: var(--ink);
+    }
+
+    .car-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); }
+    .car-price strong { font-size: 20px; color: var(--navy); font-weight: 800; }
+
+    /* How It Works */
+    .how-it-works { background: var(--white); padding: 80px 0; }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
+    .step-card { padding: 32px 24px; background: var(--paper); border-radius: 16px; border: 1px solid var(--border); }
+    .step-icon {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 800;
+      margin: 0 auto 20px;
+    }
+
+    /* Testimonials */
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .review-card { background: var(--white); padding: 28px; border-radius: 12px; border: 1px solid var(--border); }
+    
+    /* Promo Banner Strip */
+    .promo-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+      color: var(--white);
+      padding: 50px 0;
+      border-radius: 20px;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer { background: var(--navy-dark); color: #94A3B8; padding: 70px 0 30px; font-size: 14px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { color: var(--white); font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+    .footer-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(6, 17, 38, 0.8); backdrop-filter: blur(6px);
+      z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box { background: var(--white); width: 100%; max-width: 580px; border-radius: 16px; overflow: hidden; }
+    .modal-header { background: var(--navy); color: var(--white); padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
+
+    @media(max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .category-grid, .fleet-grid { grid-template-columns: repeat(2, 1fr); }
+      .search-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width: 640px) {
+      .category-grid, .fleet-grid, .steps-grid, .reviews-grid { grid-template-columns: 1fr; }
+      .search-grid { grid-template-columns: 1fr; }
+      .top-strip { display: none; }
+    }
+  </style>
 </head>
 <body>
 
+<!-- Top Info Strip -->
 <div class="top-strip">
   <div class="wrap">
     <div class="top-info">
@@ -576,11 +351,12 @@
   </div>
 </div>
 
+<!-- Header Navigation -->
 <header>
   <nav>
     <a href="#" class="brand">
       <div class="brand-logo-icon">▲</div>
-      <div class="brand-text">
+      <div>
         UAL <span>FLEET</span>
         <span class="brand-sub">AUTO RENTALS LLC</span>
       </div>
@@ -588,9 +364,9 @@
 
     <div class="navlinks">
       <a href="#home">Home</a>
+      <a href="#categories">Explore</a>
       <a href="#fleet">Our Fleet</a>
-      <a href="#why">Why Us</a>
-      <a href="#business">Insurance & Corporate</a>
+      <a href="#how">How It Works</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
     </div>
@@ -600,47 +376,31 @@
         <span>📞</span> (832) 844-1156
       </a>
       <a class="btn btn-primary" href="#contact">Book Now</a>
-      <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
     </div>
   </nav>
 </header>
 
-<!-- Mobile Navigation Drawer -->
-<div class="mobile-menu-overlay" id="mobileMenu">
-  <button style="position:absolute; top:20px; right:20px; background:none; border:none; color:white; font-size:30px;" onclick="toggleMobileMenu()">✕</button>
-  <a href="#home" onclick="toggleMobileMenu()">Home</a>
-  <a href="#fleet" onclick="toggleMobileMenu()">Our Fleet</a>
-  <a href="#why" onclick="toggleMobileMenu()">Why Choose Us</a>
-  <a href="#business" onclick="toggleMobileMenu()">Business & Insurance</a>
-  <a href="#reviews" onclick="toggleMobileMenu()">Reviews</a>
-  <a href="#contact" onclick="toggleMobileMenu()">Contact & Reserve</a>
-  <a href="tel:+18328441156" style="color:var(--orange); font-size:18px;">📞 Call (832) 844-1156</a>
-</div>
-
+<!-- Hero Section -->
 <section class="hero" id="home">
-  <div class="hero-bg-overlay"></div>
-  <div class="hero-glow"></div>
   <div class="wrap hero-inner">
     <div>
-      <div class="hero-badge">
-        <span>★ HOUSTON'S TRUSTED FLEET PARTNER</span>
-      </div>
-      <h1>Drive Your Next <br><span class="highlight">Adventure.</span></h1>
-      <p>Everyday fuel-efficient sedans and compact crossovers. Serving Houston individuals, corporate accounts, and insurance replacement rentals with speed and dependability.</p>
+      <span class="hero-tag">IT EXPERT SOLUTION & FLEET PARTNER</span>
+      <h1>Drive Your Journey <br>Your Way.</h1>
+      <p>Reliable daily sedans and practical small crossovers. Serving Houston individuals, corporate accounts, and insurance replacement rentals with zero hidden fees.</p>
       
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="#fleet">Browse Fleet (8)</a>
-        <a class="btn btn-ghost-white" href="tel:+18328441156">Call (832) 844-1156</a>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:32px;">
+        <a class="btn btn-primary" href="#fleet">Explore All Cars</a>
+        <a class="btn btn-blue" href="tel:+18328441156">Call (832) 844-1156</a>
       </div>
 
       <div class="hero-stats">
         <div>
-          <div class="stat-num">100<span>%</span></div>
-          <div class="stat-lbl">Inspected Vehicles</div>
+          <div class="stat-num">25,000<span>+</span></div>
+          <div class="stat-lbl">Happy Customers</div>
         </div>
         <div>
-          <div class="stat-num">24<span>/7</span></div>
-          <div class="stat-lbl">Houston Support</div>
+          <div class="stat-num">100<span>%</span></div>
+          <div class="stat-lbl">Serviced Fleet</div>
         </div>
         <div>
           <div class="stat-num">4.9<span>★</span></div>
@@ -649,31 +409,29 @@
       </div>
     </div>
 
-    <div class="hero-car-showcase">
-      <img class="hero-car-img" src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80" alt="Toyota Camry Rental Houston">
+    <div>
+      <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80" alt="Rental Car Houston" style="border-radius:16px; box-shadow: 0 25px 50px rgba(0,0,0,0.5);">
     </div>
   </div>
 </section>
 
+<!-- Search Filter Overlay -->
 <div class="search-wrapper wrap">
   <div class="search-card">
-    <div class="search-card-title">
-      <span>🔎</span> Quick Vehicle Search & Reservation Filter
-    </div>
     <div class="search-grid">
       <div class="form-group">
         <label>Pickup Location</label>
         <select class="form-control" id="searchLocation">
-          <option value="houston">5719 Edward Dr, Houston TX (Main Fleet)</option>
+          <option value="houston">5719 Edward Dr, Houston TX (Main Yard)</option>
           <option value="iah">Houston IAH Airport Pickup</option>
           <option value="hou">Houston Hobby Airport Pickup</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label>Category</label>
+        <label>Car Category</label>
         <select class="form-control" id="searchCategory" onchange="filterCategory(this.value)">
-          <option value="all">All Fleet (8 Available)</option>
+          <option value="all">All Vehicles (8 Available)</option>
           <option value="sedan">Everyday Sedans</option>
           <option value="suv">Compact Crossovers & Small SUVs</option>
         </select>
@@ -690,58 +448,50 @@
       </div>
 
       <button class="btn btn-primary" style="height: 46px;" onclick="scrollToFleet()">
-        Find Available Vehicles
+        Find Available Cars
       </button>
     </div>
   </div>
 </div>
 
-<section class="features-strip">
-  <div class="wrap">
-    <div class="features-grid">
-      <div class="f-card">
-        <div class="f-icon">🚘</div>
-        <div class="f-content">
-          <h4>Inspected & Serviced</h4>
-          <p>Every vehicle undergoes a multi-point safety check before leaving.</p>
-        </div>
-      </div>
+<!-- Explore Car Categories -->
+<section class="section-block wrap" id="categories">
+  <div class="section-title-wrap">
+    <span class="section-tag">CATEGORIES</span>
+    <h2 class="section-title">Explore Our Car Categories</h2>
+  </div>
 
-      <div class="f-card">
-        <div class="f-icon">⏱️</div>
-        <div class="f-content">
-          <h4>Fast Turnaround</h4>
-          <p>Quick check-ins for insurance claims and emergency bookings.</p>
-        </div>
-      </div>
-
-      <div class="f-card">
-        <div class="f-icon">💵</div>
-        <div class="f-content">
-          <h4>Transparent Rates</h4>
-          <p>Zero hidden fees with daily, weekly, and monthly discounts.</p>
-        </div>
-      </div>
-
-      <div class="f-card">
-        <div class="f-icon">📍</div>
-        <div class="f-content">
-          <h4>Local Houston Delivery</h4>
-          <p>Pickup and drop-off assistance available across Greater Houston.</p>
-        </div>
-      </div>
+  <div class="category-grid">
+    <div class="cat-card" onclick="filterCategory('sedan')">
+      <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=400&q=80" alt="Sedans">
+      <h4>Everyday Sedans</h4>
+      <p>Toyota Camry, Corolla & Civic</p>
+    </div>
+    <div class="cat-card" onclick="filterCategory('suv')">
+      <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=400&q=80" alt="Compact SUVs">
+      <h4>Small SUVs & Crossovers</h4>
+      <p>RAV4, CR-V, Rogue & CX-5</p>
+    </div>
+    <div class="cat-card" onclick="filterCategory('all')">
+      <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=400&q=80" alt="Insurance Replacement">
+      <h4>Insurance Replacements</h4>
+      <p>Quick Claim Approvals</p>
+    </div>
+    <div class="cat-card" onclick="filterCategory('all')">
+      <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=400&q=80" alt="Corporate Rentals">
+      <h4>Corporate Rentals</h4>
+      <p>Weekly & Monthly Discounts</p>
     </div>
   </div>
 </section>
 
-<section class="fleet-section wrap" id="fleet">
-  <div class="section-header">
-    <span class="section-tag">PRACTICAL & RELIABLE</span>
-    <h2 class="section-title">Explore Our Everyday Houston Rental Fleet</h2>
-    <p class="section-desc">Reliable daily sedans and practical small crossovers perfect for Houston commuters, visitors, and insurance replacements.</p>
+<!-- Fleet Listing Section -->
+<section class="section-block wrap" id="fleet">
+  <div class="section-title-wrap">
+    <span class="section-tag">FEATURED VEHICLES</span>
+    <h2 class="section-title">Our Houston Rental Fleet</h2>
   </div>
 
-  <!-- Fleet Controls Bar (Categories & Sorting Options) -->
   <div class="fleet-controls-bar">
     <div class="fleet-tabs">
       <button class="tab-btn active" onclick="filterCategory('all', this)">All Fleet (8)</button>
@@ -749,9 +499,9 @@
       <button class="tab-btn" onclick="filterCategory('suv', this)">Small SUVs & Crossovers (4)</button>
     </div>
 
-    <div class="sort-group">
-      <label for="sortSelect">Sort By:</label>
-      <select class="form-control" id="sortSelect" style="width: auto; padding: 6px 12px; font-size: 13px;" onchange="applySort(this.value)">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <label style="font-size:12px; font-weight:700; color:var(--navy);">SORT BY:</label>
+      <select class="form-control" style="width:auto; padding:6px 12px; font-size:13px;" onchange="applySort(this.value)">
         <option value="newest">Newest First</option>
         <option value="oldest">Oldest First</option>
         <option value="price-asc">Price: Low to High</option>
@@ -761,497 +511,217 @@
     </div>
   </div>
 
-  <!-- Dynamic Vehicle Grid -->
   <div class="fleet-grid" id="fleetGrid">
-    <!-- Vehicles dynamically populated by JavaScript -->
+    <!-- Rendered Dynamically -->
   </div>
 </section>
 
-<section class="business-section" id="business">
-  <div class="wrap biz-grid">
-    <div>
-      <span class="section-tag" style="color:var(--orange-hover)">TAILORED SOLUTIONS</span>
-      <h2 class="section-title" style="color:var(--white); margin-bottom: 20px;">Insurance Replacements & Corporate Fleet Accounts</h2>
-      <p style="color:#D1D5DB; margin-bottom:24px; line-height:1.7;">
-        Need a replacement vehicle while yours is in the shop? Partnered with insurance claims or managing a business team in Houston? UAL Fleet LLC provides rapid vehicle dispatch and streamlined billing.
-      </p>
-
-      <ul class="biz-list">
-        <li>Direct insurance claim coordination and billing assistance</li>
-        <li>Discounted long-term weekly and monthly corporate rates</li>
-        <li>Fuel-efficient sedans and crossovers for everyday commuters</li>
-        <li>Flexible extension options with hassle-free maintenance</li>
-      </ul>
-
-      <a class="btn btn-primary" href="tel:+18328441156">Contact CEO Mazhar Zahoor</a>
-    </div>
-
-    <div class="biz-card">
-      <h3>Need an Immediate Replacement?</h3>
-      <p>Give our team a call right now to secure a vehicle today without waiting in long airport counter lines.</p>
-      
-      <div style="background:rgba(0,0,0,0.2); padding:20px; border-radius:10px; margin-bottom:20px;">
-        <div style="font-size:12px; color:var(--orange); font-weight:700;">DIRECT PHONE LINE</div>
-        <div style="font-size:24px; font-weight:800; color:var(--white); font-family:'Poppins';">+1 (832) 844-1156</div>
-        <div style="font-size:13px; color:#9CA3AF;">Email: info@ualfleet.com</div>
-      </div>
-
-      <button class="btn btn-outline" style="width:100%; color:white; border-color:white;" onclick="scrollToContact()">Request Corporate Quote</button>
-    </div>
-  </div>
-</section>
-
-<section class="reviews-section" id="reviews">
+<!-- How It Works Section -->
+<section class="how-it-works" id="how">
   <div class="wrap">
-    <div class="section-header">
-      <span class="section-tag">TESTIMONIALS</span>
-      <h2 class="section-title">What Houston Drivers Say</h2>
-      <p class="section-desc">Real reviews from our satisfied daily renters, business clients, and insurance replacement guests.</p>
+    <div class="section-title-wrap">
+      <span class="section-tag">EASY PROCESS</span>
+      <h2 class="section-title">How It Works</h2>
     </div>
 
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-quote">"Mazhar and the team at UAL Fleet saved my trip when my personal car was getting repaired. Renting the Toyota Camry SE was seamless, super clean, and got amazing gas mileage."</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">DM</div>
-          <div class="reviewer-info">
-            <h5>David Miller</h5>
-            <span>Insurance Replacement • Houston TX</span>
-          </div>
-        </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-icon">1</div>
+        <h3 style="margin-bottom:10px; color:var(--navy);">Search & Select</h3>
+        <p style="color:var(--muted); font-size:14px;">Browse our everyday sedans or crossovers and pick your preferred pickup date.</p>
       </div>
-
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-quote">"We needed two Honda RAV4s and CR-Vs for visiting consultants at our Houston office. Fast drop-off, clean cars, and zero hidden fees!"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">SR</div>
-          <div class="reviewer-info">
-            <h5>Sarah Reynolds</h5>
-            <span>Corporate Account • Energy Corridor</span>
-          </div>
-        </div>
+      <div class="step-card">
+        <div class="step-icon">2</div>
+        <h3 style="margin-bottom:10px; color:var(--navy);">Reserve & Confirm</h3>
+        <p style="color:var(--muted); font-size:14px;">Fill in your details or call CEO Mazhar Zahoor for quick confirmation.</p>
       </div>
-
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-quote">"Best rental experience in Houston! Honest pricing and reliable sedans. Highly recommend UAL Fleet LLC for any everyday trip."</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">AH</div>
-          <div class="reviewer-info">
-            <h5>Ahmed Hassan</h5>
-            <span>Family Rental • Sugar Land TX</span>
-          </div>
-        </div>
+      <div class="step-card">
+        <div class="step-icon">3</div>
+        <h3 style="margin-bottom:10px; color:var(--navy);">Drive Away</h3>
+        <p style="color:var(--muted); font-size:14px;">Pick up your sanitized, fully inspected car at 5719 Edward Dr, Houston.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contact-section" id="contact">
-  <div class="wrap contact-grid">
-    <div class="contact-info-card">
-      <h2 style="font-size:32px; font-weight:800; margin-bottom:12px;">Get In Touch</h2>
-      <p style="color:#C9D3E4; font-size:15px; margin-bottom:36px;">Have a question or need to finalize a custom reservation? Call CEO Mazhar Zahoor or send us a message below.</p>
-
-      <div class="c-detail">
-        <div class="c-icon">👤</div>
-        <div class="c-text">
-          <label>Executive Contact</label>
-          <span>Mazhar Zahoor (CEO)</span>
-        </div>
-      </div>
-
-      <div class="c-detail">
-        <div class="c-icon">📞</div>
-        <div class="c-text">
-          <label>Phone Number</label>
-          <a href="tel:+18328441156">+1 (832) 844-1156</a>
-        </div>
-      </div>
-
-      <div class="c-detail">
-        <div class="c-icon">✉️</div>
-        <div class="c-text">
-          <label>Email Address</label>
-          <a href="mailto:info@ualfleet.com">info@ualfleet.com</a>
-        </div>
-      </div>
-
-      <div class="c-detail">
-        <div class="c-icon">📍</div>
-        <div class="c-text">
-          <label>Fleet Location</label>
-          <span>5719 Edward Dr, Houston TX 77032</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="booking-form-card">
-      <h3 style="font-size:24px; color:var(--navy); font-weight:800; margin-bottom:8px;">Request a Reservation</h3>
-      <p style="font-size:14px; color:var(--muted); margin-bottom:24px;">Fill out your vehicle requirements and dates. Our team will contact you promptly to confirm availability.</p>
-
-      <form id="reservationForm" onsubmit="handleFormSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Full Name *</label>
-            <input type="text" class="form-control" required placeholder="John Doe">
-          </div>
-          <div class="form-group">
-            <label>Phone Number *</label>
-            <input type="tel" class="form-control" required placeholder="(832) 000-0000">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" class="form-control" placeholder="john@example.com">
-          </div>
-          <div class="form-group">
-            <label>Preferred Vehicle</label>
-            <select class="form-control" id="formCarSelect">
-              <option value="Camry">Toyota Camry SE</option>
-              <option value="Civic">Honda Civic Sport</option>
-              <option value="Corolla">Toyota Corolla LE</option>
-              <option value="Elantra">Hyundai Elantra SEL</option>
-              <option value="RAV4">Toyota RAV4 XLE</option>
-              <option value="CRV">Honda CR-V EX</option>
-              <option value="Rogue">Nissan Rogue SV</option>
-              <option value="CX5">Mazda CX-5 Select</option>
-              <option value="Other">Other (Specify in notes)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Pickup Date</label>
-            <input type="date" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label>Return Date</label>
-            <input type="date" class="form-control" required>
-          </div>
-        </div>
-
-        <div class="form-group" style="margin-bottom:20px;">
-          <label>Additional Notes / Insurance Claim Details</label>
-          <textarea class="form-control" rows="3" placeholder="Tell us if this is for insurance replacement, business use, or specific requests..."></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary" style="width:100%;">
-          Submit Reservation Request
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<div class="modal-overlay" id="bookingModal">
-  <div class="modal-box">
-    <div class="modal-header">
-      <h3 id="modalCarTitle">Reserve Vehicle</h3>
-      <button class="modal-close" onclick="closeModal()">✕</button>
-    </div>
-    <div class="modal-body">
-      <div style="display:flex; gap:16px; align-items:center; margin-bottom:16px;">
-        <img id="modalCarImg" src="" style="width:120px; height:80px; object-fit:cover; border-radius:8px;" alt="Selected Car">
-        <div>
-          <div id="modalCarCategory" class="badge badge-orange">Sedan</div>
-          <h4 id="modalCarName" style="font-size:18px; color:var(--navy); font-weight:800; margin-top:4px;">Vehicle Name</h4>
-          <div style="font-size:13px; color:var(--muted);" id="modalCarRate">$68 / day</div>
-        </div>
-      </div>
-
-      <div class="price-calc-box">
-        <div>
-          <div style="font-size:12px; color:var(--muted); font-weight:600;">ESTIMATED TOTAL</div>
-          <div style="font-size:24px; font-weight:800; color:var(--navy);" id="modalEstTotal">$68.00</div>
-        </div>
-        <div style="font-size:12px; color:var(--orange); font-weight:700;">*Rates calculated on 1 day minimum</div>
-      </div>
-
-      <form onsubmit="handleModalSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name *</label>
-            <input type="text" class="form-control" required placeholder="Full Name">
-          </div>
-          <div class="form-group">
-            <label>Phone Number *</label>
-            <input type="tel" class="form-control" required placeholder="(832) 844-1156">
-          </div>
-        </div>
-
-        <div class="form-group" style="margin-bottom:16px;">
-          <label>Days Needed</label>
-          <input type="number" min="1" max="90" value="1" class="form-control" id="modalDaysInput" onchange="updateModalPrice()">
-        </div>
-
-        <button type="submit" class="btn btn-primary" style="width:100%;">Confirm Reservation Request</button>
-      </form>
-    </div>
+<!-- Promo Discount Banner -->
+<div class="wrap">
+  <div class="promo-banner">
+    <h2 style="font-size:28px; font-weight:800; margin-bottom:10px;">Get 10% Off On Your First Rental</h2>
+    <p style="color:#CBD5E1; margin-bottom:20px;">Use promo code <strong>UALHOUSTON</strong> or call us directly to apply instant savings.</p>
+    <a class="btn btn-primary" href="tel:+18328441156">Call (832) 844-1156 Now</a>
   </div>
 </div>
 
-<footer>
+<!-- Testimonials Section -->
+<section class="section-block wrap" id="reviews">
+  <div class="section-title-wrap">
+    <span class="section-tag">TESTIMONIALS</span>
+    <h2 class="section-title">What Our Customers Say</h2>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div style="color:#F59E0B; margin-bottom:10px;">★★★★★</div>
+      <p style="font-size:14px; color:var(--ink); margin-bottom:16px;">"Renting the Toyota Camry was seamless. Super clean car, great gas mileage, and transparent pricing with no airport markup."</p>
+      <div style="font-weight:700; color:var(--navy); font-size:14px;">David Miller</div>
+      <div style="font-size:12px; color:var(--muted);">Insurance Replacement • Houston TX</div>
+    </div>
+
+    <div class="review-card">
+      <div style="color:#F59E0B; margin-bottom:10px;">★★★★★</div>
+      <p style="font-size:14px; color:var(--ink); margin-bottom:16px;">"We needed two crossovers for visiting corporate consultants. Fast drop-off and easy direct billing with UAL Fleet!"</p>
+      <div style="font-weight:700; color:var(--navy); font-size:14px;">Sarah Reynolds</div>
+      <div style="font-size:12px; color:var(--muted);">Corporate Account • Energy Corridor</div>
+    </div>
+
+    <div class="review-card">
+      <div style="color:#F59E0B; margin-bottom:10px;">★★★★★</div>
+      <p style="font-size:14px; color:var(--ink); margin-bottom:16px;">"Best rental company in Houston. Mazhar took care of everything personally. Highly recommend for personal or family trips."</p>
+      <div style="font-weight:700; color:var(--navy); font-size:14px;">Ahmed Hassan</div>
+      <div style="font-size:12px; color:var(--muted);">Daily Renter • Sugar Land TX</div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
   <div class="wrap">
     <div class="footer-grid">
       <div>
         <div class="brand" style="margin-bottom:16px;">
           <div class="brand-logo-icon">▲</div>
-          <div class="brand-text">UAL <span>FLEET</span></div>
+          <div>UAL <span>FLEET</span></div>
         </div>
-        <p style="color:#9CA3AF; line-height:1.6; font-size:13.5px; margin-bottom:20px;">
-          UAL Fleet LLC is Houston's dependable auto rental service. Providing everyday sedans and small crossover SUVs for business, daily travel, and insurance replacements.
+        <p style="font-size:13.5px; line-height:1.6; margin-bottom:20px;">
+          UAL Fleet LLC provides dependable, budget-friendly everyday sedans and small crossovers for Houston commuters, corporate fleets, and insurance claim guests.
         </p>
-        <p style="color:var(--white); font-weight:700;">CEO: Mazhar Zahoor</p>
+        <div style="color:var(--white); font-weight:700;">Executive Contact: Mazhar Zahoor (CEO)</div>
       </div>
 
       <div>
         <h4>Fleet Categories</h4>
-        <ul class="footer-links">
-          <li><a href="#fleet" onclick="filterCategory('sedan')">Everyday Sedans</a></li>
-          <li><a href="#fleet" onclick="filterCategory('suv')">Small Crossovers & SUVs</a></li>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:8px;"><a href="#fleet" onclick="filterCategory('sedan')">Everyday Sedans</a></li>
+          <li style="margin-bottom:8px;"><a href="#fleet" onclick="filterCategory('suv')">Small SUVs & Crossovers</a></li>
         </ul>
       </div>
 
       <div>
         <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#fleet">All Rental Fleet</a></li>
-          <li><a href="#business">Insurance Replacement</a></li>
-          <li><a href="#business">Corporate Accounts</a></li>
-          <li><a href="#contact">Reserve Vehicle</a></li>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:8px;"><a href="#home">Home</a></li>
+          <li style="margin-bottom:8px;"><a href="#categories">Categories</a></li>
+          <li style="margin-bottom:8px;"><a href="#fleet">Our Fleet</a></li>
+          <li style="margin-bottom:8px;"><a href="#how">How It Works</a></li>
         </ul>
       </div>
 
       <div>
-        <h4>Houston Location</h4>
-        <p style="color:#9CA3AF; margin-bottom:10px;">📍 5719 Edward Dr, Houston TX 77032</p>
-        <p style="color:#9CA3AF; margin-bottom:10px;">📞 <a href="tel:+18328441156" style="color:white; font-weight:700;">(832) 844-1156</a></p>
-        <p style="color:#9CA3AF;">✉ info@ualfleet.com</p>
+        <h4>Houston Yard Location</h4>
+        <p style="margin-bottom:8px;">📍 5719 Edward Dr, Houston TX 77032</p>
+        <p style="margin-bottom:8px;">📞 <a href="tel:+18328441156" style="color:white; font-weight:700;">(832) 844-1156</a></p>
+        <p>✉ info@ualfleet.com</p>
       </div>
     </div>
 
     <div class="footer-bottom">
       <span>© 2026 UAL Fleet LLC. All rights reserved. Houston, Texas.</span>
       <div style="display:flex; gap:20px;">
-        <a href="#home">Privacy Policy</a>
-        <a href="#home">Terms of Service</a>
-        <a href="#contact">Contact Support</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
       </div>
     </div>
   </div>
 </footer>
 
-<script>
-  // Reset Fleet Database: 4 Everyday Sedans + 4 Small/Compact SUVs with Accurate Names & Specs
-  const fleetData = [
-    // --- EVERYDAY SEDANS ---
-    {
-      id: 1,
-      name: "Toyota Camry SE",
-      category: "sedan",
-      tag: "Midsize Sedan",
-      badgeClass: "badge-navy",
-      image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic",
-      drive: "2.5L 4-Cyl / 32 MPG",
-      luggage: "3 Bags",
-      priceDay: 68,
-      priceWeek: 410,
-      rating: 4.9,
-      year: 2024,
-      dateAdded: "2024-06-10"
-    },
-    {
-      id: 2,
-      name: "Honda Civic Sport",
-      category: "sedan",
-      tag: "Compact Sedan",
-      badgeClass: "badge-green",
-      image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic CVT",
-      drive: "2.0L 4-Cyl / 35 MPG",
-      luggage: "2 Bags",
-      priceDay: 62,
-      priceWeek: 370,
-      rating: 4.8,
-      year: 2023,
-      dateAdded: "2023-10-15"
-    },
-    {
-      id: 3,
-      name: "Toyota Corolla LE",
-      category: "sedan",
-      tag: "Economy Sedan",
-      badgeClass: "badge-green",
-      image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic CVT",
-      drive: "2.0L 4-Cyl / 38 MPG",
-      luggage: "2 Bags",
-      priceDay: 60,
-      priceWeek: 360,
-      rating: 4.9,
-      year: 2024,
-      dateAdded: "2024-02-01"
-    },
-    {
-      id: 4,
-      name: "Hyundai Elantra SEL",
-      category: "sedan",
-      tag: "Commuter Sedan",
-      badgeClass: "badge-green",
-      image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic",
-      drive: "2.0L 4-Cyl / 36 MPG",
-      luggage: "2-3 Bags",
-      priceDay: 58,
-      priceWeek: 350,
-      rating: 4.7,
-      year: 2023,
-      dateAdded: "2023-08-20"
-    },
+<!-- Modal -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="modalCarTitle">Reserve Vehicle</h3>
+      <button style="background:none; border:none; color:white; font-size:24px; cursor:pointer;" onclick="closeModal()">✕</button>
+    </div>
+    <div style="padding:24px;">
+      <div style="display:flex; gap:16px; align-items:center; margin-bottom:16px;">
+        <img id="modalCarImg" src="" style="width:120px; height:80px; object-fit:cover; border-radius:8px;" alt="Selected Car">
+        <div>
+          <div id="modalCarCategory" class="badge badge-orange">Sedan</div>
+          <h4 id="modalCarName" style="font-size:18px; color:var(--navy); font-weight:800;">Vehicle Name</h4>
+          <div style="font-size:13px; color:var(--muted);" id="modalCarRate">$68 / day</div>
+        </div>
+      </div>
 
-    // --- SMALL / COMPACT SUVS ---
-    {
-      id: 5,
-      name: "Toyota RAV4 XLE",
-      category: "suv",
-      tag: "Compact SUV",
-      badgeClass: "badge-orange",
-      image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic",
-      drive: "2.5L 4-Cyl / 30 MPG",
-      luggage: "3-4 Bags",
-      priceDay: 80,
-      priceWeek: 480,
-      rating: 4.9,
-      year: 2024,
-      dateAdded: "2024-05-12"
-    },
-    {
-      id: 6,
-      name: "Honda CR-V EX",
-      category: "suv",
-      tag: "Compact SUV",
-      badgeClass: "badge-navy",
-      image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic CVT",
-      drive: "1.5L Turbo / 31 MPG",
-      luggage: "3-4 Bags",
-      priceDay: 78,
-      priceWeek: 470,
-      rating: 4.8,
-      year: 2023,
-      dateAdded: "2023-11-05"
-    },
-    {
-      id: 7,
-      name: "Nissan Rogue SV",
-      category: "suv",
-      tag: "Small Crossover",
-      badgeClass: "badge-green",
-      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "Automatic Xtronic",
-      drive: "1.5L VC-Turbo / 33 MPG",
-      luggage: "3 Bags",
-      priceDay: 75,
-      priceWeek: 450,
-      rating: 4.7,
-      year: 2024,
-      dateAdded: "2024-03-18"
-    },
-    {
-      id: 8,
-      name: "Mazda CX-5 Select",
-      category: "suv",
-      tag: "Compact Crossover",
-      badgeClass: "badge-navy",
-      image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=700&q=80",
-      seats: "5 Seats",
-      trans: "6-Speed Auto",
-      drive: "2.5L AWD / 28 MPG",
-      luggage: "3 Bags",
-      priceDay: 76,
-      priceWeek: 460,
-      rating: 4.8,
-      year: 2023,
-      dateAdded: "2023-09-28"
-    }
+      <form onsubmit="handleModalSubmit(event)">
+        <div class="form-group" style="margin-bottom:12px;">
+          <label>Your Name *</label>
+          <input type="text" class="form-control" required placeholder="Full Name">
+        </div>
+        <div class="form-group" style="margin-bottom:12px;">
+          <label>Phone Number *</label>
+          <input type="tel" class="form-control" required placeholder="(832) 844-1156">
+        </div>
+        <div class="form-group" style="margin-bottom:16px;">
+          <label>Days Needed</label>
+          <input type="number" min="1" max="90" value="1" class="form-control" id="modalDaysInput" onchange="updateModalPrice()">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Confirm Reservation Request</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  const fleetData = [
+    { id: 1, name: "Toyota Camry SE", category: "sedan", tag: "Midsize Sedan", badgeClass: "badge-blue", image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic", drive: "2.5L 4-Cyl / 32 MPG", luggage: "3 Bags", priceDay: 68, priceWeek: 410, rating: 4.9, year: 2024, dateAdded: "2024-06-10" },
+    { id: 2, name: "Honda Civic Sport", category: "sedan", tag: "Compact Sedan", badgeClass: "badge-orange", image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic CVT", drive: "2.0L 4-Cyl / 35 MPG", luggage: "2 Bags", priceDay: 62, priceWeek: 370, rating: 4.8, year: 2023, dateAdded: "2023-10-15" },
+    { id: 3, name: "Toyota Corolla LE", category: "sedan", tag: "Economy Sedan", badgeClass: "badge-blue", image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic CVT", drive: "2.0L 4-Cyl / 38 MPG", luggage: "2 Bags", priceDay: 60, priceWeek: 360, rating: 4.9, year: 2024, dateAdded: "2024-02-01" },
+    { id: 4, name: "Hyundai Elantra SEL", category: "sedan", tag: "Commuter Sedan", badgeClass: "badge-orange", image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic", drive: "2.0L 4-Cyl / 36 MPG", luggage: "2 Bags", priceDay: 58, priceWeek: 350, rating: 4.7, year: 2023, dateAdded: "2023-08-20" },
+    { id: 5, name: "Toyota RAV4 XLE", category: "suv", tag: "Compact SUV", badgeClass: "badge-orange", image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic", drive: "2.5L 4-Cyl / 30 MPG", luggage: "3-4 Bags", priceDay: 80, priceWeek: 480, rating: 4.9, year: 2024, dateAdded: "2024-05-12" },
+    { id: 6, name: "Honda CR-V EX", category: "suv", tag: "Compact SUV", badgeClass: "badge-blue", image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic CVT", drive: "1.5L Turbo / 31 MPG", luggage: "3-4 Bags", priceDay: 78, priceWeek: 470, rating: 4.8, year: 2023, dateAdded: "2023-11-05" },
+    { id: 7, name: "Nissan Rogue SV", category: "suv", tag: "Small Crossover", badgeClass: "badge-orange", image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic", drive: "1.5L Turbo / 33 MPG", luggage: "3 Bags", priceDay: 75, priceWeek: 450, rating: 4.7, year: 2024, dateAdded: "2024-03-18" },
+    { id: 8, name: "Mazda CX-5 Select", category: "suv", tag: "Compact Crossover", badgeClass: "badge-blue", image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "6-Speed Auto", drive: "2.5L AWD / 28 MPG", luggage: "3 Bags", priceDay: 76, priceWeek: 460, rating: 4.8, year: 2023, dateAdded: "2023-09-28" }
   ];
 
   let currentCategory = 'all';
   let currentSort = 'newest';
   let selectedCarForModal = null;
 
-  // Render Dynamic Cars
   function renderFleet() {
     const grid = document.getElementById('fleetGrid');
     grid.innerHTML = '';
 
-    // Filter by Category (All, Sedans, or SUVs)
-    let list = currentCategory === 'all' 
-      ? [...fleetData] 
-      : fleetData.filter(car => car.category === currentCategory);
+    let list = currentCategory === 'all' ? [...fleetData] : fleetData.filter(car => car.category === currentCategory);
 
-    // Sort Handler
-    if (currentSort === 'newest') {
-      list.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
-    } else if (currentSort === 'oldest') {
-      list.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
-    } else if (currentSort === 'price-asc') {
-      list.sort((a, b) => a.priceDay - b.priceDay);
-    } else if (currentSort === 'price-desc') {
-      list.sort((a, b) => b.priceDay - a.priceDay);
-    } else if (currentSort === 'rating-desc') {
-      list.sort((a, b) => b.rating - a.rating);
-    }
+    if (currentSort === 'newest') list.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    else if (currentSort === 'oldest') list.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+    else if (currentSort === 'price-asc') list.sort((a, b) => a.priceDay - b.priceDay);
+    else if (currentSort === 'price-desc') list.sort((a, b) => b.priceDay - a.priceDay);
+    else if (currentSort === 'rating-desc') list.sort((a, b) => b.rating - a.rating);
 
-    // Render Cards
     list.forEach(car => {
       const card = document.createElement('div');
       card.className = 'car-card';
       card.innerHTML = `
-        <div class="car-card-image-wrap">
+        <div class="car-card-img">
           <span class="badge ${car.badgeClass} car-top-badge">${car.tag}</span>
           <span class="badge badge-star car-rating-badge">★ ${car.rating}</span>
-          <img src="${car.image}" alt="${car.name}" loading="lazy" onerror="this.src='https://placehold.co/600x400/0B1E3D/FFFFFF?text=${encodeURIComponent(car.name)}'">
+          <img src="${car.image}" alt="${car.name}">
         </div>
         <div class="car-body">
-          <div class="car-title-row">
-            <div>
-              <div class="car-category">${car.year} • ${car.category.toUpperCase()}</div>
-              <h3 class="car-title">${car.name}</h3>
-            </div>
-          </div>
+          <div class="car-sub">${car.year} • ${car.category.toUpperCase()}</div>
+          <h3 class="car-title">${car.name}</h3>
 
-          <div class="car-specs-grid">
-            <div class="spec-item"><i>👥</i> ${car.seats}</div>
-            <div class="spec-item"><i>⚙️</i> ${car.trans}</div>
-            <div class="spec-item"><i>🛣️</i> ${car.drive}</div>
-            <div class="spec-item"><i>🧳</i> ${car.luggage}</div>
+          <div class="car-specs">
+            <div>👥 ${car.seats}</div>
+            <div>⚙️ ${car.trans}</div>
+            <div>🛣️ ${car.drive}</div>
+            <div>🧳 ${car.luggage}</div>
           </div>
 
           <div class="car-footer">
-            <div class="car-price">
-              Starting at<br>
-              <strong>$${car.priceDay}</strong> <span style="font-size:12px; color:var(--muted)">/ day</span>
-            </div>
-            <button class="btn btn-navy" onclick="openBookingModal(${car.id})">
-              Book Now &rarr;
-            </button>
+            <div class="car-price">Starting at<br><strong>$${car.priceDay}</strong> / day</div>
+            <button class="btn btn-navy" onclick="openBookingModal(${car.id})">Book Now</button>
           </div>
         </div>
       `;
@@ -1259,7 +729,6 @@
     });
   }
 
-  // Category Handler
   function filterCategory(cat, btn = null) {
     currentCategory = cat;
     if (btn) {
@@ -1269,80 +738,27 @@
     renderFleet();
   }
 
-  // Sort Handler
-  function applySort(sortValue) {
-    currentSort = sortValue;
-    renderFleet();
-  }
+  function applySort(sortVal) { currentSort = sortVal; renderFleet(); }
+  function scrollToFleet() { document.getElementById('fleet').scrollIntoView({ behavior: 'smooth' }); }
 
-  // Mobile Drawer Toggle
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('active');
-  }
-
-  // Scroll Helpers
-  function scrollToFleet() {
-    document.getElementById('fleet').scrollIntoView({ behavior: 'smooth' });
-  }
-  function scrollToContact() {
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  // Booking Modal Logic
   function openBookingModal(carId) {
     selectedCarForModal = fleetData.find(c => c.id === carId);
     if (!selectedCarForModal) return;
-
     document.getElementById('modalCarName').innerText = selectedCarForModal.name;
     document.getElementById('modalCarTitle').innerText = `Reserve ${selectedCarForModal.name}`;
     document.getElementById('modalCarCategory').innerText = `★ ${selectedCarForModal.rating} | ${selectedCarForModal.year} ${selectedCarForModal.category.toUpperCase()}`;
-    document.getElementById('modalCarRate').innerText = `$${selectedCarForModal.priceDay} / day ($${selectedCarForModal.priceWeek} / week)`;
+    document.getElementById('modalCarRate').innerText = `$${selectedCarForModal.priceDay} / day`;
     document.getElementById('modalCarImg').src = selectedCarForModal.image;
-    document.getElementById('modalDaysInput').value = 1;
-
-    updateModalPrice();
     document.getElementById('bookingModal').classList.add('active');
   }
 
-  function closeModal() {
-    document.getElementById('bookingModal').classList.remove('active');
-  }
+  function closeModal() { document.getElementById('bookingModal').classList.remove('active'); }
+  function handleModalSubmit(e) { e.preventDefault(); alert(`Reservation request sent for ${selectedCarForModal.name}!`); closeModal(); }
 
-  function updateModalPrice() {
-    if (!selectedCarForModal) return;
-    const days = parseInt(document.getElementById('modalDaysInput').value) || 1;
-    let total = 0;
-    if (days >= 7) {
-      const weeks = Math.floor(days / 7);
-      const remDays = days % 7;
-      total = (weeks * selectedCarForModal.priceWeek) + (remDays * selectedCarForModal.priceDay);
-    } else {
-      total = days * selectedCarForModal.priceDay;
-    }
-    document.getElementById('modalEstTotal').innerText = `$${total.toFixed(2)}`;
-  }
-
-  function handleModalSubmit(e) {
-    e.preventDefault();
-    alert(`Thank you! Your reservation request for ${selectedCarForModal.name} has been submitted. Our team at UAL Fleet LLC will contact you shortly.`);
-    closeModal();
-  }
-
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    alert("Thank you! Your reservation request has been sent to UAL Fleet LLC. We will reach out to confirm your vehicle.");
-    e.target.reset();
-  }
-
-  // Initial Load
   window.onload = function() {
     renderFleet();
-    
-    // Set default dates to today & tomorrow
     const today = new Date().toISOString().split('T')[0];
     const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
-    
     if(document.getElementById('searchPickDate')) document.getElementById('searchPickDate').value = today;
     if(document.getElementById('searchDropDate')) document.getElementById('searchDropDate').value = tomorrow;
   };
