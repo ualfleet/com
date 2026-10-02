@@ -626,7 +626,7 @@
   </div>
 </footer>
 
-<!-- Modal -->
+<!-- Modal Overlay -->
 <div class="modal-overlay" id="bookingModal">
   <div class="modal-box">
     <div class="modal-header">
@@ -663,16 +663,144 @@
 </div>
 
 <script>
-  // Everyday Normal Cars & Small Crossovers Database (Matching Specs & Real Names)
+  // Correct Image Mappings Corresponding to Each Specific Vehicle Model
   const fleetData = [
-    { id: 1, name: "Toyota Camry SE", category: "sedan", tag: "Midsize Sedan", badgeClass: "badge-blue", image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic", drive: "2.5L 4-Cyl / 32 MPG", luggage: "3 Bags", priceDay: 68, priceWeek: 410, rating: 4.9, year: 2024, dateAdded: "2024-06-10" },
-    { id: 2, name: "Honda Civic Sport", category: "sedan", tag: "Compact Sedan", badgeClass: "badge-orange", image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic CVT", drive: "2.0L 4-Cyl / 35 MPG", luggage: "2 Bags", priceDay: 62, priceWeek: 370, rating: 4.8, year: 2023, dateAdded: "2023-10-15" },
-    { id: 3, name: "Toyota Corolla LE", category: "sedan", tag: "Economy Sedan", badgeClass: "badge-blue", image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic CVT", drive: "2.0L 4-Cyl / 38 MPG", luggage: "2 Bags", priceDay: 60, priceWeek: 360, rating: 4.9, year: 2024, dateAdded: "2024-02-01" },
-    { id: 4, name: "Hyundai Elantra SEL", category: "sedan", tag: "Commuter Sedan", badgeClass: "badge-orange", image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic", drive: "2.0L 4-Cyl / 36 MPG", luggage: "2 Bags", priceDay: 58, priceWeek: 350, rating: 4.7, year: 2023, dateAdded: "2023-08-20" },
-    { id: 5, name: "Toyota RAV4 XLE", category: "suv", tag: "Compact SUV", badgeClass: "badge-orange", image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic", drive: "2.5L 4-Cyl / 30 MPG", luggage: "3-4 Bags", priceDay: 80, priceWeek: 480, rating: 4.9, year: 2024, dateAdded: "2024-05-12" },
-    { id: 6, name: "Honda CR-V EX", category: "suv", tag: "Compact SUV", badgeClass: "badge-blue", image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic CVT", drive: "1.5L Turbo / 31 MPG", luggage: "3-4 Bags", priceDay: 78, priceWeek: 470, rating: 4.8, year: 2023, dateAdded: "2023-11-05" },
-    { id: 7, name: "Nissan Rogue SV", category: "suv", tag: "Small Crossover", badgeClass: "badge-orange", image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "Automatic", drive: "1.5L Turbo / 33 MPG", luggage: "3 Bags", priceDay: 75, priceWeek: 450, rating: 4.7, year: 2024, dateAdded: "2024-03-18" },
-    { id: 8, name: "Mazda CX-5 Select", category: "suv", tag: "Compact Crossover", badgeClass: "badge-blue", image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=700&q=80", seats: "5 Seats", trans: "6-Speed Auto", drive: "2.5L AWD / 28 MPG", luggage: "3 Bags", priceDay: 76, priceWeek: 460, rating: 4.8, year: 2023, dateAdded: "2023-09-28" }
+    { 
+      id: 1, 
+      name: "Toyota Camry SE", 
+      category: "sedan", 
+      tag: "Midsize Sedan", 
+      badgeClass: "badge-blue", 
+      image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=700&q=80", 
+      seats: "5 Seats", 
+      trans: "Automatic", 
+      drive: "2.5L 4-Cyl / 32 MPG", 
+      luggage: "3 Bags", 
+      priceDay: 68, 
+      priceWeek: 410, 
+      rating: 4.9, 
+      year: 2024, 
+      dateAdded: "2024-06-10" 
+    },
+    { 
+      id: 2, 
+      name: "Honda Civic Sport", 
+      category: "sedan", 
+      tag: "Compact Sedan", 
+      badgeClass: "badge-orange", 
+      image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=700&q=80", 
+      seats: "5 Seats", 
+      trans: "Automatic CVT", 
+      drive: "2.0L 4-Cyl / 35 MPG", 
+      luggage: "2 Bags", 
+      priceDay: 62, 
+      priceWeek: 370, 
+      rating: 4.8, 
+      year: 2023, 
+      dateAdded: "2023-10-15" 
+    },
+    { 
+      id: 3, 
+      name: "Toyota Corolla LE", 
+      category: "sedan", 
+      tag: "Economy Sedan", 
+      badgeClass: "badge-blue", 
+      image: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=700&q=80", 
+      seats: "5 Seats", 
+      trans: "Automatic CVT", 
+      drive: "2.0L 4-Cyl / 38 MPG", 
+      luggage: "2 Bags", 
+      priceDay: 60, 
+      priceWeek: 360, 
+      rating: 4.9, 
+      year: 2024, 
+      dateAdded: "2024-02-01" 
+    },
+    { 
+      id: 4, 
+      name: "Hyundai Elantra SEL", 
+      category: "sedan", 
+      tag: "Commuter Sedan", 
+      badgeClass: "badge-orange", 
+      image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=700&q=80", 
+      seats: "5 Seats", 
+      trans: "Automatic", 
+      drive: "2.0L 4-Cyl / 36 MPG", 
+      luggage: "2 Bags", 
+      priceDay: 58, 
+      priceWeek: 350, 
+      rating: 4.7, 
+      year: 2023, 
+      dateAdded: "2023-08-20" 
+    },
+    { 
+      id: 5, 
+      name: "Toyota RAV4 XLE", 
+      category: "suv", 
+      tag: "Compact SUV", 
+      badgeClass: "badge-orange", 
+      image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80", 
+      seats: "5 Seats", 
+      trans: "Automatic", 
+      drive: "2.5L 4-Cyl / 30 MPG", 
+      luggage: "3-4 Bags", 
+      priceDay: 80, 
+      priceWeek: 480, 
+      rating: 4.9, 
+      year: 2024, 
+      dateAdded: "2024-05-12" 
+    },
+    { 
+      id: 6, 
+      name: "Honda CR-V EX", 
+      category: "suv", 
+      tag: "Compact SUV", 
+      badgeClass: "badge-blue", 
+      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80", 
+      seats: "5 Seats", 
+      trans: "Automatic CVT", 
+      drive: "1.5L Turbo / 31 MPG", 
+      luggage: "3-4 Bags", 
+      priceDay: 78, 
+      priceWeek: 470, 
+      rating: 4.8, 
+      year: 2023, 
+      dateAdded: "2023-11-05" 
+    },
+    { 
+      id: 7, 
+      name: "Nissan Rogue SV", 
+      category: "suv", 
+      tag: "Small Crossover", 
+      badgeClass: "badge-orange", 
+      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80", 
+      seats: "5 Seats", 
+      trans: "Automatic", 
+      drive: "1.5L Turbo / 33 MPG", 
+      luggage: "3 Bags", 
+      priceDay: 75, 
+      priceWeek: 450, 
+      rating: 4.7, 
+      year: 2024, 
+      dateAdded: "2024-03-18" 
+    },
+    { 
+      id: 8, 
+      name: "Mazda CX-5 Select", 
+      category: "suv", 
+      tag: "Compact Crossover", 
+      badgeClass: "badge-blue", 
+      image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=700&q=80", 
+      seats: "5 Seats", 
+      trans: "6-Speed Auto", 
+      drive: "2.5L AWD / 28 MPG", 
+      luggage: "3 Bags", 
+      priceDay: 76, 
+      priceWeek: 460, 
+      rating: 4.8, 
+      year: 2023, 
+      dateAdded: "2023-09-28" 
+    }
   ];
 
   let currentCategory = 'all';
@@ -698,7 +826,7 @@
         <div class="car-card-img">
           <span class="badge ${car.badgeClass} car-top-badge">${car.tag}</span>
           <span class="badge badge-star car-rating-badge">★ ${car.rating}</span>
-          <img src="${car.image}" alt="${car.name}">
+          <img src="${car.image}" alt="${car.name}" onerror="this.src='https://placehold.co/600x400/2563EB/FFFFFF?text=${encodeURIComponent(car.name)}'">
         </div>
         <div class="car-body">
           <div class="car-sub">${car.year} • ${car.category.toUpperCase()}</div>
