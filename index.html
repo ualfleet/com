@@ -100,75 +100,52 @@
     }
     nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; max-width: 1240px; margin: 0 auto; }
     
-    /* Updated Brand Logo Styling */
+    /* Brand Logo & Monogram Styling Matching Image 2 */
     .brand-logo-container {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
     .brand-logo-svg {
-      height: 52px;
+      height: 60px;
       width: auto;
     }
     .brand-text-wrap {
       display: flex;
       flex-direction: column;
     }
-    .brand-title {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 900;
-      font-size: 26px;
-      line-height: 0.9;
-      color: #0A192F;
-      letter-spacing: -0.01em;
-      display: flex;
-      align-items: center;
-    }
-    .brand-title .custom-a {
-      display: inline-block;
-      position: relative;
-      color: #0A192F;
-      margin: 0 1px;
-    }
-    .brand-title .custom-a::before {
-      content: "";
-      position: absolute;
-      top: 3px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 0;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      border-bottom: 10px solid #FF6B00;
+    .brand-title-svg {
+      height: 28px;
+      width: auto;
+      display: block;
     }
     .brand-sub-orange {
       font-family: 'Poppins', sans-serif;
       font-weight: 900;
-      font-size: 18px;
-      color: #FF6B00;
-      letter-spacing: 0.05em;
+      font-size: 20px;
+      color: #FF5500;
+      letter-spacing: 0.04em;
       line-height: 1;
       margin-top: 2px;
     }
     .brand-sub-tag {
       font-family: 'Inter', sans-serif;
       font-weight: 700;
-      font-size: 11px;
+      font-size: 12px;
       color: #0A192F;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-top: 1px;
+      gap: 8px;
+      margin-top: 3px;
     }
     .brand-sub-tag::before, .brand-sub-tag::after {
       content: "";
       display: inline-block;
-      width: 12px;
+      width: 14px;
       height: 2px;
-      background: #FF6B00;
+      background: #FF5500;
     }
 
     .navlinks { display: flex; gap: 32px; font-weight: 600; font-size: 15px; color: var(--ink); }
@@ -407,35 +384,60 @@
 <header>
   <nav>
     <a href="#" class="brand-logo-container">
-      <!-- SVG Emblem from Image 1 -->
-      <svg class="brand-logo-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
+      <!-- Monogram SVG matching Image 2 exactly -->
+      <svg class="brand-logo-svg" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#FF7B00" />
-            <stop offset="100%" stop-color="#FF5000" />
+            <stop offset="0%" stop-color="#FF7A00" />
+            <stop offset="100%" stop-color="#FF4800" />
           </linearGradient>
         </defs>
-        <!-- Dynamic Orange Swoosh Rings -->
-        <path d="M 25 105 C 10 70 30 25 90 20 C 150 15 210 35 220 70 C 225 85 220 95 210 100 C 195 105 180 85 170 70 C 150 45 100 35 60 50 C 35 60 25 80 32 100 C 35 108 28 110 25 105 Z" fill="url(#orangeGrad)"/>
-        <!-- Navy Road Base with Dashed Markings -->
-        <path d="M 15 135 C 50 160 170 155 230 115 C 225 105 210 100 200 105 C 150 135 60 135 25 120 Z" fill="#0A192F"/>
-        <path d="M 45 134 L 75 138 L 70 142 L 40 138 Z" fill="#FFFFFF"/>
-        <path d="M 95 141 L 130 143 L 125 147 L 90 144 Z" fill="#FFFFFF"/>
-        <path d="M 150 143 L 185 141 L 180 144 L 145 146 Z" fill="#FFFFFF"/>
-        <!-- Modern Car Silhouette -->
-        <path d="M 35 112 C 40 90 60 75 90 68 C 120 62 160 62 190 75 C 210 84 220 95 222 106 C 205 110 180 112 150 112 C 100 112 55 115 35 112 Z" fill="#0A192F"/>
-        <!-- Car Windows / Highlights -->
-        <path d="M 85 73 C 110 68 145 68 170 77 C 160 88 130 92 95 92 C 85 88 80 80 85 73 Z" fill="#FFFFFF"/>
-        <!-- Headlight Swoosh -->
-        <path d="M 185 88 C 200 88 212 94 215 99 C 205 100 195 97 185 93 Z" fill="url(#orangeGrad)"/>
-        <!-- Bottom Orange Swoosh Accent -->
-        <path d="M 50 148 C 100 165 180 155 220 125 C 210 123 190 135 145 146 C 95 152 60 148 50 148 Z" fill="url(#orangeGrad)"/>
+        
+        <!-- Outer Top Orange Swoosh -->
+        <path d="M 28 128 C 0 82 25 18 115 12 C 190 8 275 35 292 82 C 300 102 290 118 270 125 C 248 132 225 102 210 82 C 185 50 128 36 78 58 C 45 72 32 98 42 122 C 45 130 32 133 28 128 Z" fill="url(#orangeGrad)"/>
+        
+        <!-- Outer Navy Rear Loop -->
+        <path d="M 270 125 C 295 105 305 70 275 42 C 255 24 220 22 195 38 C 220 38 250 50 262 75 C 272 96 258 116 238 124 C 252 128 262 128 270 125 Z" fill="#0A192F"/>
+
+        <!-- Navy Road Base & Lane Markings -->
+        <path d="M 18 165 C 60 195 210 188 285 140 C 280 125 260 120 248 126 C 185 162 75 162 32 144 Z" fill="#0A192F"/>
+        <polygon points="50,163 88,168 82,174 44,168" fill="#FFFFFF"/>
+        <polygon points="112,171 158,174 152,180 106,176" fill="#FFFFFF"/>
+        <polygon points="182,173 226,170 220,175 176,178" fill="#FFFFFF"/>
+
+        <!-- Sleek Car Silhouette (Facing Right) -->
+        <path d="M 38 138 C 46 110 72 92 110 82 C 148 74 198 74 238 90 C 265 101 278 115 280 128 C 258 133 225 136 185 136 C 122 136 68 142 38 138 Z" fill="#0A192F"/>
+        
+        <!-- Car Roof & Windows -->
+        <path d="M 102 88 C 135 81 182 81 212 92 C 198 106 160 111 118 111 C 102 106 95 97 102 88 Z" fill="#FFFFFF"/>
+        
+        <!-- Front Headlight Accent -->
+        <path d="M 232 106 C 252 106 268 114 272 120 C 258 121 245 118 232 112 Z" fill="url(#orangeGrad)"/>
+
+        <!-- Bottom Orange Accent Arc -->
+        <path d="M 60 182 C 122 202 222 190 272 152 C 260 150 235 164 178 178 C 115 186 72 182 60 182 Z" fill="url(#orangeGrad)"/>
       </svg>
-      
+
+      <!-- Brand Text SVG featuring the custom "A" with Orange Triangle -->
       <div class="brand-text-wrap">
-        <div class="brand-title">
-          U<span class="custom-a">&nbsp;</span>L
-        </div>
+        <svg class="brand-title-svg" viewBox="0 0 160 38" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="aOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF7A00" />
+              <stop offset="100%" stop-color="#FF4800" />
+            </linearGradient>
+          </defs>
+          <!-- 'U' -->
+          <path d="M 5 2 C 12 2 15 2 15 22 C 15 28 19 31 25 31 C 31 31 35 28 35 22 L 35 2 L 45 2 L 45 22 C 45 33 37 38 25 38 C 13 38 5 33 5 22 Z" fill="#0A192F"/>
+          <!-- 'A' with Orange Counter Triangle -->
+          <g>
+            <path d="M 70 2 L 84 38 L 73 38 L 70 29 L 58 29 L 55 38 L 44 38 L 58 2 Z M 60 21 L 68 21 L 64 9 Z" fill="#0A192F"/>
+            <polygon points="64,10 59,21 69,21" fill="url(#aOrangeGrad)"/>
+          </g>
+          <!-- 'L' -->
+          <path d="M 92 2 L 103 2 L 103 30 L 122 30 L 122 38 L 92 38 Z" fill="#0A192F"/>
+        </svg>
+
         <div class="brand-sub-orange">FLEET LLC</div>
         <div class="brand-sub-tag">Auto Rentals</div>
       </div>
@@ -669,22 +671,28 @@
     <div class="footer-grid">
       <div>
         <div class="brand-logo-container" style="margin-bottom:16px;">
-          <svg class="brand-logo-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" style="height:44px;">
+          <svg class="brand-logo-svg" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="height:48px;">
             <defs>
               <linearGradient id="orangeGradFoot" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FF7B00" />
-                <stop offset="100%" stop-color="#FF5000" />
+                <stop offset="0%" stop-color="#FF7A00" />
+                <stop offset="100%" stop-color="#FF4800" />
               </linearGradient>
             </defs>
-            <path d="M 25 105 C 10 70 30 25 90 20 C 150 15 210 35 220 70 C 225 85 220 95 210 100 C 195 105 180 85 170 70 C 150 45 100 35 60 50 C 35 60 25 80 32 100 C 35 108 28 110 25 105 Z" fill="url(#orangeGradFoot)"/>
-            <path d="M 15 135 C 50 160 170 155 230 115 C 225 105 210 100 200 105 C 150 135 60 135 25 120 Z" fill="#FFFFFF"/>
-            <path d="M 35 112 C 40 90 60 75 90 68 C 120 62 160 62 190 75 C 210 84 220 95 222 106 C 205 110 180 112 150 112 C 100 112 55 115 35 112 Z" fill="#FFFFFF"/>
-            <path d="M 50 148 C 100 165 180 155 220 125 C 210 123 190 135 145 146 C 95 152 60 148 50 148 Z" fill="url(#orangeGradFoot)"/>
+            <path d="M 28 128 C 0 82 25 18 115 12 C 190 8 275 35 292 82 C 300 102 290 118 270 125 C 248 132 225 102 210 82 C 185 50 128 36 78 58 C 45 72 32 98 42 122 C 45 130 32 133 28 128 Z" fill="url(#orangeGradFoot)"/>
+            <path d="M 18 165 C 60 195 210 188 285 140 C 280 125 260 120 248 126 C 185 162 75 162 32 144 Z" fill="#FFFFFF"/>
+            <path d="M 38 138 C 46 110 72 92 110 82 C 148 74 198 74 238 90 C 265 101 278 115 280 128 C 258 133 225 136 185 136 C 122 136 68 142 38 138 Z" fill="#FFFFFF"/>
+            <path d="M 60 182 C 122 202 222 190 272 152 C 260 150 235 164 178 178 C 115 186 72 182 60 182 Z" fill="url(#orangeGradFoot)"/>
           </svg>
+
           <div class="brand-text-wrap">
-            <div class="brand-title" style="color:#FFFFFF;">
-              U<span class="custom-a" style="color:#FFFFFF;">&nbsp;</span>L
-            </div>
+            <svg class="brand-title-svg" viewBox="0 0 160 38" xmlns="http://www.w3.org/2000/svg" style="height:22px;">
+              <path d="M 5 2 C 12 2 15 2 15 22 C 15 28 19 31 25 31 C 31 31 35 28 35 22 L 35 2 L 45 2 L 45 22 C 45 33 37 38 25 38 C 13 38 5 33 5 22 Z" fill="#FFFFFF"/>
+              <g>
+                <path d="M 70 2 L 84 38 L 73 38 L 70 29 L 58 29 L 55 38 L 44 38 L 58 2 Z M 60 21 L 68 21 L 64 9 Z" fill="#FFFFFF"/>
+                <polygon points="64,10 59,21 69,21" fill="url(#orangeGradFoot)"/>
+              </g>
+              <path d="M 92 2 L 103 2 L 103 30 L 122 30 L 122 38 L 92 38 Z" fill="#FFFFFF"/>
+            </svg>
             <div class="brand-sub-orange">FLEET LLC</div>
           </div>
         </div>
